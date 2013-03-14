@@ -30,16 +30,7 @@ if __name__ == '__main__':
     data = read_data_file('santa_cities.csv')  # id, x, y
     data = subsample_data(data, 50)
     tsp = TSP(data)
-    tsp.build_mesh()
-    tsp.build_distance_graph()
-    tsp.compute_MST()
-    tsp.find_odd_degree_nodes()
-    tsp.find_minimum_weight_matching()
-    tsp.find_hamilton_tour()
-    # try:
-    #     tsp.find_hamilton_tour()
-    # except Exception, e:
-    #     print e
+    tsp.solve()
 
     tsp.plot(showMST=True, labelNodes=True)
     #profile.run('tsp.plot(showMST=True)')

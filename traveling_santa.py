@@ -3,7 +3,6 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import matplotlib.delaunay as triang
 import matplotlib.patches as patch
-#from openopt import TSP as ooTSP
 import math as m
 import time
 from networkx.algorithms.matching import max_weight_matching
@@ -17,6 +16,16 @@ class TSP(object):
         self.city_ids = data[0::, 0]
         self.x = data[0::, 1].astype(np.float)
         self.y = data[0::, 2].astype(np.float)
+        self.build_mesh()
+        self.build_distance_graph()
+
+    def solve(self):
+        """ Solve the TSP with Christofides-Heuristic"""
+        self.compute_MST()
+        self.find_odd_degree_nodes()
+        self.find_minimum_weight_matching()
+        self.find_euler_tour()
+        self.find_hamilton_tour()
 
     def build_mesh(self):
         print 'triangulating ...'
@@ -33,17 +42,6 @@ class TSP(object):
             g.add_edge(i, j, weight=g.dist_func(i, j))
         self.g = g
         print '#edges:', len(self.edges), '#nodes:', len(self.x)
-
-    # def find_optimum_solution(self):
-    #     p = ooTSP(self.g, returnToStart=False, start=0)#, fTol=1)#m.pow(10,4))
-    #     print 'solve tsp'
-    #     r = p.solve('glpk')
-    #     print r.edges
-    #     path_len = self.calc_path_length(r.edges)
-    #     print '#edges:', len(r.edges), '#nodes:', len(self.x), ' path length: ', path_len
-    #     #     for e in r.edges:
-    #     # #path_len += 
-    #     # plt.plot(x[list(e)],y[list(e)], 'r--', lw=2)
 
     def euclidean_dist(self, i, j):
         d = self.xy[:,i] - self.xy[:,j]
@@ -63,7 +61,6 @@ class TSP(object):
         print "took %s" % (t2-t1)
 
     def find_odd_degree_nodes(self):
-        #degrees = nx.degree(self.g, self.g.nodes())
         odd_nodes = []
         for n in self.mst.nodes_iter():
             if nx.degree(self.mst, n) & 1:
@@ -85,7 +82,10 @@ class TSP(object):
         self.o = o
         print '#edges:', len(edges), '#nodes:', len(o.nodes()), len(self.odd_deg_nodes)
         print "computing minimum matching"
+        t1 = time.time()
         mates = max_weight_matching(o, maxcardinality=True)
+        t2 = time.time()
+        print "took %s" % (t2-t1)        
         m = nx.Graph()
         for i in mates.keys():
             m.add_edge(i,mates[i], weight=self.g.dist_func(i,mates[i]))
@@ -93,102 +93,93 @@ class TSP(object):
         self.plot_edges(m.edges(),'r-',2)
         self.m = m
 
-    def build_euler_tour(self, h, start=0):
-        """ build euler tour, using Hierholzer algorithm """
+    def find_euler_tour(self, nx_euler=False):
+        h = nx.MultiGraph()
+        h.add_edges_from(self.mst.edges())
+        h.add_edges_from(self.m.edges())
         if not nx.is_eulerian(h):
             raise ValueError('h must be eulerian')
+        print "find euler tour"
+        t1 = time.time()
+        if nx_euler:
+            euler_edges = nx.eulerian_circuit(h)
+            self.euler_path = [e for e in euler_edges]
+        else:
+            self.euler_path = self.build_euler_tour(h)
+        t2 = time.time()
+        print "took %s" % (t2-t1) 
+        print "euler path: ", self.euler_path
+        print '#edges:', len(self.euler_path), '#nodes:', len(h.nodes())
+        self.plot_edges(self.euler_path,'c--',2)
+        self.h = h
+
+
+    def build_euler_tour(self, h, start=0):
+        """ build euler tour, using Hierholzer algorithm """
         n = start
         path = [n]
         unvis_edge_nodes = [n]
-        #num_nodes = h.number_of_nodes()
         while len(unvis_edge_nodes) > 0:
             #form subpath cycle, insert
             subpath = []
-            #start at node n travel until n reached again
-            n = unvis_edge_nodes.pop()
-            #cn = h.neighbors(n)[0] #pick first
-            cn = n
-            e = self.unvisited_edges(h, cn)[0]
+            #start at node n
+            n = unvis_edge_nodes[-1]
+            cn = n  # set current node
+            uedges = self.unvisited_edges(h, cn)
+            if len(uedges) == 0:
+                unvis_edge_nodes.pop()
+                continue
+            e = uedges[0]
             next = e[1]
             h[cn][next][e[2]]["v"] = True
-            while next != n:
+            while next != n:  #travel until n reached again
                 cn = next
                 edges = self.unvisited_edges(h, cn)
                 if len(edges) > 1:
                     #add nodes with unvisited edges to list
                     unvis_edge_nodes.append(cn)
-                    print "node with unvisited edges:", cn, len(edges)
-                # mark edge as visited, traverse further
+                    #print "node with unvisited edges:", cn, len(edges)
                 e = edges[0]  # there has to be at least one
                 next = e[1]
-                h[cn][next][e[2]]["v"] = True
+                h[cn][next][e[2]]["v"] = True  # mark edge as visited
                 subpath.append(cn)
-                print edges
+                #print edges
             # insert subpath at index i
-            import pdb; pdb.set_trace()
             i = path.index(n)
-            print "  -- Insert circle at ", i, subpath
-            #path.insert(i, subpath)
-            path[i:] = subpath + path[i:]
-
-
-            #print neighbors, h[n], h.get_edge_data(n,neighbors[0])
-            #if h.degree(n) >= 4:
-                # if current node has h.deg>=4, check for unreachable nodes first
-                # and take these
-                #pass
-            #elif h.degree(n) >= 2:
-                # else if deg>2 take right-most unvisited edge, mark as visited
-            # for an in neighbors:
-            #     for edge,data in h[n][an].items():
-            #         print edge, data, h[n][an]
-            #         if not "v" in data:
-            #             h[n][an][edge]['v'] = True
-            #             n = an
-            #             break
-            #     if n == an: break
-            # i = i +1
-            # path.append(n)
+            #print "  -- Insert circle at ", i, subpath
+            path[i:i] = subpath
         tour = []
         for n in path:
             tour.append((start, n))
             start = n
-        return tour[1:]
+        return tour
 
     def unvisited_edges(self,h,node):
         unvisited = []
         neighbors = h.neighbors(node)
         for n in neighbors:
             for edge, data in h[node][n].items():
-                print edge, data
+                #print edge, data
                 if not "v" in data:
                     unvisited.append((node, n, edge))
         return unvisited
 
-
     def find_hamilton_tour(self):
-        visit = 1
-        h = nx.MultiGraph()
-        h.add_edges_from(self.mst.edges())
-        h.add_edges_from(self.m.edges())
-        print "find euler tour"
-        euler_edges = nx.eulerian_circuit(h)
-        self.euler_path = [e for e in euler_edges]
-        #self.euler_path = self.build_euler_tour(h)
-        print self.euler_path
-        print '#edges:', len(self.euler_path), '#nodes:', len(h.nodes())
-        self.plot_edges(self.euler_path,'c--',2)
-        #self.plot_path(self.euler_path)
-        #return
+        """ Make the euler path Hamiltonian by skipping visited nodes (shortcutting)"""
+        h = self.h
         self.g.add_weighted_edges_from(self.m.edges(data=True))
         crossings = [1]
         visit = 1
         tour = self.euler_path
+        print "start shortcutting"
+        t1 = time.time()
         while visit <= 5:
             tour, crossings = self.shortcut_path(h, tour, visit)
             tour = self.unfuddle_crossings(crossings, tour, visit)
             visit = visit + 1
         #print tour
+        t2 = time.time()
+        print "took %s" % (t2-t1) 
         print '#edges:', len(tour), "path len:", self.calc_path_length(tour)
         self.h_tour = tour
         #self.plot_edges(tour,'m-',5)
@@ -273,7 +264,9 @@ class TSP(object):
 
 
     def con_vis_neighbours(self, tour, n, nn, visit):
-        l = self.visited_neighbours(n,nn)
+        """ return two connected and visited neighbours """
+        l = self.visited_neighbours(n,nn,visit)
+        #l = self.visited_neighbours(n,nn)
         for i in range(0, len(l)-1):
             cn1 = l[i]
             for cn2 in l[i+1:]:
@@ -284,9 +277,9 @@ class TSP(object):
                                 return cn1,cn2
         return None, None
 
-    def visited_neighbours(self, n, nn=None, visit=1):
+    def visited_neighbours(self, n, exclude=None, visit=1):
         nl = self.g.neighbors(n)
-        return [n for n in nl if self.g.node[n].has_key("v") and self.g.node[n]["v"] == visit and n != nn]
+        return [n for n in nl if self.g.node[n].has_key("v") and self.g.node[n]["v"] == visit and n != exclude]
 
     def unfuddle_crossings(self, crossings, tour, visit):
         for e in crossings:
