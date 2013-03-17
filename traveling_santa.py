@@ -180,7 +180,8 @@ class TSP(object):
         #print tour
         t2 = time.time()
         print "took %s" % (t2-t1) 
-        print '#edges:', len(tour), "path len:", self.calc_path_length(tour)
+        self.best_tour_len = self.calc_path_length(tour)
+        print '#edges:', len(tour), "path len:", self.best_tour_len
         self.h_tour = tour
         #self.plot_edges(tour,'m-',5)
 
@@ -337,7 +338,7 @@ class TSP(object):
             self.plot_path(self.h_tour) 
         plt.plot(self.x, self.y, '.', ms=3)
         plt.axis('equal')
-        plt.show()
+        #plt.show()
 
     def plot_edges(self, edges, fmt='r--', width=3, zorder=5):
         for e in edges:
