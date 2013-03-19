@@ -26,15 +26,18 @@ def subsample_data(data, size):
     return np.array(samples)
 
 
+def subset_data(data, size):
+    samples = []
+    for i in range(0, size):
+        samples.append(data[i])
+    return np.array(samples)
+
+
 if __name__ == '__main__':
     data = read_data_file('santa_cities.csv')  # id, x, y
-    data = subsample_data(data, 50)
+    data = subset_data(data, 45)
     tsp = TSP(data)
     tsp.solve()
 
     tsp.plot(showMST=True, labelNodes=True)
     #profile.run('tsp.plot(showMST=True)')
-
-
-
-
