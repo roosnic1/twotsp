@@ -3,6 +3,7 @@ import numpy as np
 #import cProfile as profile
 
 from traveling_santa import TSP
+from traveling_santa_evo import EVO
 
 
 def read_data_file(file):
@@ -34,10 +35,22 @@ def subset_data(data, size):
 
 
 if __name__ == '__main__':
+    print "*** Step 1: ***"
     data = read_data_file('santa_cities.csv')  # id, x, y
-    data = subset_data(data, 45)
+    data = subset_data(data, 15)
+
+    print "*** Step 2: ***"
     tsp = TSP(data)
     tsp.solve()
 
-    tsp.plot(showMST=True, labelNodes=True)
+    print "*** Step 3: ***"
+    evo = EVO(data)
+    evo.solve()
+
+    print "*** Step 4: ***"
+    print "Results:"
+    print "[Name]Algo: ", tsp.best_tour_len
+    print "evolutionary algo: ", evo.best_tour_len
+    tsp.plot(showMST=False, labelNodes=True)
+    evo.plot(showMST=False, labelNodes=False)
     #profile.run('tsp.plot(showMST=True)')
