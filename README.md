@@ -8,11 +8,11 @@ Find the almost two best paths that never use the same edge through a number of 
 Jérémie Blaser, Martin Eigenmann and Nicolas Roos
 
 ##Install
-'''python
+```python
 pip install -r requirements.txt
-'''
+```
 
 ##Execute
-'''python
+```python
 python main.py
-'''
+```
