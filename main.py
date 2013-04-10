@@ -44,13 +44,16 @@ if __name__ == '__main__':
     tsp.solve()
 
     print "*** Step 3: ***"
-    evo = EVO(data)
+    route0 = tsp.h_tour
+    route1 = tsp.h_tour
+
+    evo = EVO(data,route0,route1)
     evo.solve()
 
-    print "*** Step 4: ***"
-    print "Results:"
-    print "[Name]Algo: ", tsp.best_tour_len
-    print "evolutionary algo: ", evo.best_tour_len
-    tsp.plot(showMST=False, labelNodes=True)
-    evo.plot(showMST=False, labelNodes=False)
+    # print "*** Step 4: ***"
+    # print "Results:"
+    # print "[Name]Algo: ", tsp.best_tour_len
+    # print "evolutionary algo: ", evo.best_tour_len
+    # tsp.plot(showMST=False, labelNodes=True)
+    # evo.plot(showMST=False, labelNodes=False)
     #profile.run('tsp.plot(showMST=True)')
