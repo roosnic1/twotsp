@@ -1,55 +1,102 @@
 from random import Random
 from time import time
-import math
-import inspyred
-import matplotlib.pyplot as plt
+from math import cos
+from math import pi
+from inspyred import ec
+from inspyred.ec import terminators
 import numpy as np
+import networkx as nx
+
+import matplotlib.pyplot as plt
+import matplotlib.delaunay as triang
+import matplotlib.patches as patch
+
 
 class EVO(object):
 
-    def __init__(self, data):
+    def __init__(self, data,route0,route1):
         self.points = data
         self.x = self.points[0::, 1].astype(np.float)
         self.y = self.points[0::, 2].astype(np.float)
+        self.route0 = route0
+        self.route1 = route1
 
-    def solve(self):
-        points = self.points  
+        self.build_mesh()
+        self.build_distance_graph()
+        self.distance_route0 = self.calc_path_length(route0)
+        self.distance_route1 = self.calc_path_length(route1)
+
+
+    def generate(random, args):
+        return self.route0
+
+
+    def evaluate(candidates, args):
+        fitness = []
+        for cs in candidates:
+            fit = self.calc_path_length(cs)
+            fitness.append(fit)
+        return fitness
+
+    def solve(self, display=True):
         prng = Random()
         prng.seed(time()) 
+    
+        ea = ec.EvolutionaryComputation(prng)
+        ea.selector = ec.selectors.tournament_selection
+        ea.replacer = ec.replacers.crowding_replacement
+        ea.variator = ec.variators.gaussian_mutation
+        ea.terminator = ec.terminators.evaluation_termination
 
-        weights = [[0 for _ in range(len(points))] for _ in range(len(points))]
-        for i, p in enumerate(points):
-            for j, q in enumerate(points):
-                weights[i][j] = math.sqrt( ( int(p[1]) - int(q[1]) )**2 + ( int(p[2]) - int(q[2]) ) **2)
-                  
-        problem = inspyred.benchmarks.TSP(weights)
-        ac = inspyred.swarm.ACS(prng, problem.components)
-        ac.terminator = inspyred.ec.terminators.generation_termination
-        final_pop = ac.evolve(generator=problem.constructor, 
-                              evaluator=problem.evaluator, 
-                              bounder=problem.bounder,
-                              maximize=problem.maximize, 
-                              pop_size=10, 
-                              max_generations=50)
+        final_pop = ea.evolve(self.generate, self.evaluate, pop_size=30, 
+                              bounder=ec.Bounder(0, 26),
+                              max_evaluations=10000,
+                              num_selected=30,
+                              mutation_rate=1.0,
+                              crowding_distance=10)
+                              
+        if display:
+            import pylab
+            x = []
+            y = []
+            for p in final_pop:
+                x.append(p.candidate[0])
+                y.append(math.sin(p.candidate[0]))
+            t = [(i / 1000.0) * 26.0 for i in range(1000)]
+            s = [math.sin(a) for a in t]
+            pylab.plot(t, s, color='b')
+            pylab.scatter(x, y, color='r')
+            pylab.axis([0, 26, 0, 1.1])
+            pylab.savefig('niche_example.pdf', format='pdf')
+            pylab.show()
+        return ea
         
-        self.best = max(ac.archive)
-        self.best_tour_len = (1/self.best.fitness)
-        print('Best Distance: {0}'.format(self.best_tour_len))
 
 
-    def plot(self, labelNodes=False, showMST=False):
-        for b in self.best.candidate:
-            self.plot_path( b.element )
 
-        plt.plot(self.x, self.y, '.', ms=3)
-        plt.axis('equal')
-        plt.show()
+# Copy from traveling_santa.py
+    def calc_path_length(self, path):
+        plen = 0
+        for i, j in path:
+            plen += self.g.dist_func(i, j)
+        return plen
 
-    def plot_path(self, e):
-        x0 = self.x[e[0]]
-        x1 = self.x[e[1]]
-        dx = x1 - x0
-        y0 = self.y[e[0]]
-        y1 = self.y[e[1]]
-        dy = y1 - y0
-        arr = plt.arrow(x0,y0,dx,dy, shape='full', lw=4, color="g",length_includes_head=True, head_width=140, head_length=160, overhang=0, zorder=10, alpha=0.5)
+    def build_distance_graph(self):
+        print "build graph"
+        self.xy = np.array((self.x, self.y))
+        g = nx.Graph()
+        g.dist_func = self.euclidean_dist
+        for i, j in self.edges:
+            g.add_edge(i, j, weight=g.dist_func(i, j))
+        self.g = g
+        print '#edges:', len(self.edges), '#nodes:', len(self.x)
+    
+    def euclidean_dist(self, i, j):
+        d = self.xy[:,i] - self.xy[:,j]
+        return np.sqrt(np.dot(d, d))
+
+    def build_mesh(self):
+        print 'triangulating ...'
+        circumcenters, edges, tri_points, tri_neighbors = triang.delaunay(self.x, self.y)
+        self.tri_points = tri_points
+        self.edges = edges
