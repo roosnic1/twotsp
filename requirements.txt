@@ -1,4 +1,7 @@
+inspyred==1.0
 matplotlib==1.2.0
 networkx==1.7
 numpy==1.7.0
 wsgiref==0.1.2
+wxPython==2.9.4.0
+wxPython-common==2.9.4.0
