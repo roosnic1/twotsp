@@ -2,3 +2,4 @@ matplotlib==1.2.0
 networkx==1.7
 numpy==1.7.0
 wsgiref==0.1.2
+inspyred==1.0
