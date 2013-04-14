@@ -90,7 +90,6 @@ class TSP(object):
         for i in mates.keys():
             m.add_edge(i,mates[i], weight=self.g.dist_func(i,mates[i]))
         print '#edges:', len(m.edges()), '#nodes:', len(m.nodes())
-        self.plot_edges(m.edges(),'r-',2)
         self.m = m
 
     def find_euler_tour(self, nx_euler=False):
@@ -110,7 +109,6 @@ class TSP(object):
         print "took %s" % (t2-t1) 
         print "euler path: ", self.euler_path
         print '#edges:', len(self.euler_path), '#nodes:', len(h.nodes())
-        self.plot_edges(self.euler_path,'c--',2)
         self.h = h
 
 
@@ -183,7 +181,6 @@ class TSP(object):
         self.best_tour_len = self.calc_path_length(tour)
         print '#edges:', len(tour), "path len:", self.best_tour_len
         self.h_tour = tour
-        #self.plot_edges(tour,'m-',5)
 
 
     def shortcut_path(self, h, path, visit):
@@ -333,12 +330,13 @@ class TSP(object):
                 plt.annotate("%s"%(city), (cx, cy), xytext=(8,8), textcoords='offset points')
         if showMST:
             self.plot_edges(self.mst.edges(), 'g-', 2, 2)
-        #self.plot_edges(self.h_tour,'m-',5) 
+        self.plot_edges(self.m.edges(),'r-',2)  # min-weight-matching
+        self.plot_edges(self.euler_path,'c--',2)
         if hasattr(self, "h_tour"):
             self.plot_path(self.h_tour) 
         plt.plot(self.x, self.y, '.', ms=3)
         plt.axis('equal')
-        #plt.show()
+        plt.show()
 
     def plot_edges(self, edges, fmt='r--', width=3, zorder=5):
         for e in edges:
@@ -360,4 +358,3 @@ class TSP(object):
 
         # for n in nodes:
         #     plt.plot(self.x[n], self.y[n], 'yo',ms=12)
-
