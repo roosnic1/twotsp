@@ -61,13 +61,10 @@ class TSP(object):
                 else:
                     next_component = selectors.fitness_proportionate_selection(random, feasible_components, {'num_selected': 1})[0]
                 candidate.append(next_component)
-        #print candidate
-        #return self.route
         return candidate
     
     def evaluator(self, candidates, args):
         """Return the fitness values for the given candidates."""
-        #fitness = []
         fitness = [0 for _ in range(len(candidates))]
         douplicates = 1
         for inx, candidate in enumerate(candidates):
@@ -77,17 +74,10 @@ class TSP(object):
                 #find duplicated edges
                 for b in self.route:
                     if( (b[0] == c.element[0] and b[1] == c.element[1]) or (b[1] == c.element[0] and b[0] == c.element[1]) ):
-                        #douplicates += 1
+                        douplicates += 1
                         total += self.weights[c.element[0]][c.element[1]]*douplicates
                         
             last = (candidate[-1].element[1], candidate[0].element[0])
             total += self.weights[last[0]][last[1]]
             fitness[inx] = ( 1 / total )
-            
-        # else:
-        #     for candidate in candidates:
-        #         total = 0
-        #         for src, dst in zip(candidate, candidate[1:] + [candidate[0]]):
-        #             total += self.weights[src][dst]
-        #         fitness.append(1 / total)
         return fitness

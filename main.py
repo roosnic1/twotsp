@@ -92,9 +92,3 @@ if __name__ == '__main__':
     print "Results:"
     print('Path0: {0} / {1}'.format(evo.calc_path_lenght(route0), route0_lenght))
     print('Path1: {0} / {1}'.format(evo.calc_path_lenght(route1), route1_lenght))
-
-    # print "[Name]Algo: ", tsp.best_tour_len
-    # print "evolutionary algo: ", evo.best_tour_len
-    # tsp.plot(showMST=False, labelNodes=True)
-    # evo.plot(showMST=False, labelNodes=False)
-    #profile.run('tsp.plot(showMST=True)')
