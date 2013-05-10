@@ -67,7 +67,6 @@ class TSP(object):
                 odd_nodes.append(n)
         #print odd_nodes
         self.odd_deg_nodes = odd_nodes
-        self.highlight_nodes(odd_nodes)
 
     def find_minimum_weight_matching(self):
         """ finds a minimum weight perfect matching"""
@@ -90,12 +89,12 @@ class TSP(object):
         for i in mates.keys():
             m.add_edge(i,mates[i], weight=self.g.dist_func(i,mates[i]))
         print '#edges:', len(m.edges()), '#nodes:', len(m.nodes())
-        self.m = m
+        self.min_matching = m
 
     def find_euler_tour(self, nx_euler=False):
         h = nx.MultiGraph()
         h.add_edges_from(self.mst.edges())
-        h.add_edges_from(self.m.edges())
+        h.add_edges_from(self.min_matching.edges())
         if not nx.is_eulerian(h):
             raise ValueError('h must be eulerian')
         print "find euler tour"
@@ -165,7 +164,7 @@ class TSP(object):
     def find_hamilton_tour(self):
         """ Make the euler path Hamiltonian by skipping visited nodes (shortcutting)"""
         h = self.h
-        self.g.add_weighted_edges_from(self.m.edges(data=True))
+        self.g.add_weighted_edges_from(self.min_matching.edges(data=True))
         crossings = [1]
         visit = 1
         tour = self.euler_path
@@ -238,7 +237,7 @@ class TSP(object):
                     start = h_tour[len(h_tour)-1-1][0]
                     h_tour.pop()
                     jump = h_tour.pop()[1]
-                    h_tour.append((start,this))
+                    h_tour.append((start, this))
                     h_tour.append(e)
                     i=i+1
                     print " looking backwards: ", start, this, " cutting ", jump
@@ -260,11 +259,10 @@ class TSP(object):
         #self.plot_edges(h_tour,'m-',5)
         return h_tour, crossings
 
-
-    def con_vis_neighbours(self, tour, n, nn, visit):
+    def con_vis_neighbours(self, tour, n, exclude, visit):
         """ return two connected and visited neighbours """
-        l = self.visited_neighbours(n,nn,visit)
-        #l = self.visited_neighbours(n,nn)
+        l = self.visited_neighbours(n, exclude, visit)
+        #l = self.visited_neighbours(n, exclude)
         for i in range(0, len(l)-1):
             cn1 = l[i]
             for cn2 in l[i+1:]:
@@ -330,10 +328,12 @@ class TSP(object):
                 plt.annotate("%s"%(city), (cx, cy), xytext=(8,8), textcoords='offset points')
         if showMST:
             self.plot_edges(self.mst.edges(), 'g-', 2, 2)
-        self.plot_edges(self.m.edges(),'r-',2)  # min-weight-matching
+        self.highlight_nodes(self.odd_deg_nodes)
+        self.plot_edges(self.min_matching.edges(),'r-',2)  # min-weight-matching
         self.plot_edges(self.euler_path,'c--',2)
+        #self.plot_path(self.euler_path, 'c')
         if hasattr(self, "h_tour"):
-            self.plot_path(self.h_tour) 
+            self.plot_path(self.h_tour)
         plt.plot(self.x, self.y, '.', ms=3)
         plt.axis('equal')
         plt.show()
@@ -343,7 +343,7 @@ class TSP(object):
             tup = [e[0], e[1]]
             plt.plot(self.x[tup],self.y[tup], fmt, lw=width, zorder=zorder)
 
-    def plot_path(self, path):
+    def plot_path(self, path, color="m"):
         for e in path:
             x0 = self.x[e[0]]
             x1 = self.x[e[1]]
@@ -351,10 +351,10 @@ class TSP(object):
             y0 = self.y[e[0]]
             y1 = self.y[e[1]]
             dy = y1 - y0
-            arr = plt.arrow(x0,y0,dx,dy, shape='full', lw=4, color="m",length_includes_head=True, head_width=140, head_length=160, overhang=0, zorder=10, alpha=0.8)
+            arr = plt.arrow(x0,y0,dx,dy, shape='full', lw=4, color=color,length_includes_head=True, head_width=140, head_length=160, overhang=0, zorder=10, alpha=0.8)
 
-    def highlight_nodes(self, nodes):
-        plt.plot(self.x[nodes], self.y[nodes], 'ro', ms=8)
+    def highlight_nodes(self, nodes, fmt='ro', ms=8):
+        plt.plot(self.x[nodes], self.y[nodes], fmt, ms=ms)
 
         # for n in nodes:
         #     plt.plot(self.x[n], self.y[n], 'yo',ms=12)
