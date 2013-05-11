@@ -284,7 +284,10 @@ class TSP(object):
             start_n = e[0]
             #center = self.g[cn]
             neig = self.visited_neighbours(cn, visit=visit)
-            ei = tour.index(e)
+            try:
+                ei = tour.index(e)  # if it's still present
+            except Exception, e:
+                continue
             prev = tour[ei-1][0]
             cand = [n for n in neig if n in self.g[start_n] and n != prev]
             print cn, start_n, prev, neig, cand
