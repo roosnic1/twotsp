@@ -79,7 +79,7 @@ class TSP(object):
             mj = self.odd_deg_nodes[j]
             o.add_edge(mi, mj, weight=o.dist_func(mi, mj))
         self.o = o
-        print '#edges:', len(edges), '#nodes:', len(o.nodes()), len(self.odd_deg_nodes)
+        print '#edges:', len(edges), '#odd_deg_nodes:', len(o.nodes()), len(self.odd_deg_nodes)
         print "computing minimum matching"
         t1 = time.time()
         mates = max_weight_matching(o, maxcardinality=True)
@@ -312,12 +312,12 @@ class TSP(object):
             new.append((e[1], e[0]))
         return new
 
-
     def has_sting(self, g, n):
+        """ checks if node has a sting, eg. true for node 2 in 1,2,3,2,4  """
         node = g[n]
         for nn, edge in node.items():
-            if len(edge) == 2: #its a parallel edge
-                if g.degree(nn) == 2: # is leading nowehre els
+            if len(edge) == 2:  # its a parallel edge
+                if g.degree(nn) == 2:  # is leading nowehre else
                     return True
         return False
 
