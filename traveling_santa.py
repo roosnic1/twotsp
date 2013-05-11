@@ -170,7 +170,7 @@ class TSP(object):
         tour = self.euler_path
         print "start shortcutting"
         t1 = time.time()
-        while visit <= 5:
+        while visit <= 6:
             tour, crossings = self.shortcut_path(h, tour, visit)
             tour = self.unfuddle_crossings(crossings, tour, visit)
             visit = visit + 1
