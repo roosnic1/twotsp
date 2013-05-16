@@ -18,11 +18,16 @@ from traveling_santa_evo_tsp import TSP
 
 class EVO(object):
 
-    def __init__(self, data,route):
+    def __init__(self, data, route):
         self.route = route
         self.points = []
         for i, p in enumerate(data):
             self.points.insert(i, (np.int_(p[1]) ,np.int_(p[2]) ) )
+
+        self.weights = [[0 for _ in range(len(self.points))] for _ in range(len(self.points))]
+        for i, p in enumerate(self.points):
+            for j, q in enumerate(self.points):
+                self.weights[i][j] = math.sqrt((p[0] - q[0])**2 + (p[1] - q[1])**2)
         
 
 
@@ -45,11 +50,6 @@ class EVO(object):
     def solve(self, display=True):
         prng = Random()
         prng.seed(time()) 
-    
-        self.weights = [[0 for _ in range(len(self.points))] for _ in range(len(self.points))]
-        for i, p in enumerate(self.points):
-            for j, q in enumerate(self.points):
-                self.weights[i][j] = math.sqrt((p[0] - q[0])**2 + (p[1] - q[1])**2)
                   
         problem = TSP(self.weights,self.route)
         ac = inspyred.swarm.ACS(prng, problem.components)

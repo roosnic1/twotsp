@@ -39,7 +39,6 @@ class EVO(object):
 
     def calc_path_duplicates(self,route0, route1):
         duplicates = 0
-#opt
         for inx0, edge0 in enumerate(route0):
             for inx1, edge1 in enumerate(route1):
                 if( (edge1[0] == edge0[0] and edge1[1] == edge0[1]) or (edge1[1] == edge0[0] and edge1[0] == edge0[1]) ):
@@ -62,9 +61,9 @@ class EVO(object):
                               evaluator=problem.evaluator, 
                               bounder=problem.bounder,
                               maximize=problem.maximize, 
-                              pop_size=100, 
-                              max_generations=50,
-                              tournament_size=5,
+                              pop_size=200, 
+                              max_generations=60,
+                              tournament_size=10,
                               num_selected=100,
                               num_elites=1)
 
