@@ -50,7 +50,7 @@ if __name__ == '__main__':
     #acs = ACS(data,route0)
     evo = EVO(data,route0)
     #profile.run("evo.solve()")
-    #evo.solve()
+    evo.solve()
     #acs.solve()
 
 

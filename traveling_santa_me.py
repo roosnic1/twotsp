@@ -33,15 +33,6 @@ class ME(object):
         print('Path1: {0}'.format(self.calc_path_lenght(self.route1)))
 
 
-    def calc_path_duplicates(self,route0, route1):
-        duplicates = 0
-        for inx0, edge0 in enumerate(route0):
-            for inx1, edge1 in enumerate(route1):
-                if( (edge1[0] == edge0[0] and edge1[1] == edge0[1]) or (edge1[1] == edge0[0] and edge1[0] == edge0[1]) ):
-                    duplicates += 1
-        return duplicates
-
-
     def calc_path_lenght(self,path):
         total  = 0
         for c in path:
@@ -76,10 +67,24 @@ class ME(object):
 
             if self.hashmap.get(edgehash)[1] == False:
                 del self.hashmap[edgehash]
+    def solve_duplicate(self,route,inx):
+
+        
+
+
+        return route
 
     def solve(self):
-        self.build_hasmap()
+        self.hashmap = dict()
 
+        while(len(self.hashmap)>0):
+            self.build_hasmap()
+
+            for mapentry in self.hashmap:
+                if self.calc_path_lenght(self.route0) > elf.calc_path_lenght(self.route1):
+                    self.route1 = self.solve_duplicate(self.route1,self.hashmap.get(mapentry)[1])
+                else:
+                    self.route0 = self.solve_duplicate(self.route0,self.hashmap.get(mapentry)[0])
         
         
 
