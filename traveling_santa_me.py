@@ -57,12 +57,45 @@ class ME(object):
                         print('solving duplicate ({0}) {1} and ({2}) {3}'.format(inx0, edge0, inx1, edge1))
                         if(self.calc_path_lenght(self.route0)<self.calc_path_lenght(self.route1)):
                             print('manipulate route0 on {0}'.format(inx0) )
-                            print self.getNearesPoint(inx0)
-                            self.route0.append( (self.route0[-1][1],self.route0[inx1][0]) )
-                            self.route0[inx0-1] = (self.route0[inx0-1][0],self.route0[inx0][1])
-                            self.route0.remove(self.route0[inx0])   
+
+                            newpt = self.getNearesPoint(edge1[0])
+                            oldpt = self.route0[inx0][1]
+
+                              
+                            self.route0[inx0] = (self.route0[inx0][0],newpt)
+                            self.route0.insert(inx0+1, (newpt,oldpt) )
+
+
+                            manipulated0 = False
+                            for inx3, edge3 in enumerate(self.route0):
+                                
+                                if edge3[0] == newpt and manipulated0 == False and inx3 != inx0+1:
+                                    self.route0[inx3-1] = (self.route0[inx3-1][0],self.route0[inx3][1])
+                                    self.route0.remove(self.route0[inx3])
+
+                                    manipulated0 = True
+
+
                         else:
                             print('manipulate route1 on {0}'.format(inx1) )
-                            self.route1.append( (self.route1[-1][1],self.route1[inx1][0]) )
-                            self.route1[inx1-1] = (self.route1[inx1-1][0],self.route1[inx1][1])
-                            self.route1.remove(self.route1[inx1]) 
+                            newpt = self.getNearesPoint(edge1[0])
+                            oldpt = self.route1[inx1][1]
+
+                              
+                            self.route1[inx1] = (self.route1[inx1][0],newpt)
+                            self.route1.insert(inx1+1, (newpt,oldpt) )
+
+
+                            manipulated1 = False
+                            for inx3, edge3 in enumerate(self.route1):
+                                
+                                if edge3[0] == newpt and manipulated1 == False and inx3 != inx1+1:
+                                    self.route1[inx3-1] = (self.route1[inx3-1][0],self.route1[inx3][1])
+                                    self.route1.remove(self.route1[inx3])
+
+                                    manipulated1 = True
+
+                            
+
+
+                            

@@ -79,7 +79,7 @@ class TSP(object):
                     for b in self.route:
                         if( (b[0] == c.element[0] and b[1] == c.element[1]) or (b[1] == c.element[0] and b[0] == c.element[1]) ):
                             douplicates += 1
-                            total += self.weights[c.element[0]][c.element[1]]*douplicates
+                            total += self.weights[c.element[0]][c.element[1]]#*douplicates
                             
                 last = (candidate[-1].element[1], candidate[0].element[0])
                 total += self.weights[last[0]][last[1]]

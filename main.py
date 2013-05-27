@@ -38,7 +38,7 @@ def subset_data(data, size):
 if __name__ == '__main__':
     print "*** Step 1: ***"
     data = read_data_file('santa_cities.csv')  # id, x, y
-    data = subset_data(data, 25)
+    data = subset_data(data, 750)
 
     print "*** Step 2: ***"
     tsp = TSP(data)
@@ -47,16 +47,16 @@ if __name__ == '__main__':
     print "*** Step 3: ***"
     route0 = tsp.h_tour
 
-    #acs = ACS(data,route0)
+    acs = ACS(data,route0)
     evo = EVO(data,route0)
     #profile.run("evo.solve()")
-    evo.solve()
-    #acs.solve()
+    #evo.solve()
+    acs.solve()
 
 
-    route1 = evo.tour
-    #route1 = acs.tour
-    #route1 = route0
+    #route1 = evo.tour
+    route1 = acs.tour
+    #route1 = list(route0)
 
     route0_lenght = evo.calc_path_lenght(route0)
     route1_lenght = evo.calc_path_lenght(route1)
