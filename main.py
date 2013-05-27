@@ -54,9 +54,9 @@ if __name__ == '__main__':
     #acs.solve()
 
 
-    #route1 = evo.tour
+    route1 = evo.tour
     #route1 = acs.tour
-    route1 = list(route0)
+    #route1 = list(route0)
 
     route0_lenght = evo.calc_path_lenght(route0)
     route1_lenght = evo.calc_path_lenght(route1)

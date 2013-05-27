@@ -66,13 +66,21 @@ class ME(object):
 
             if edgehash in self.hashmap:
                 oldinx = self.hashmap.get(edgehash)[0]
-                self.hashmap.update({edgehash:(oldinx,False)})
+                self.hashmap.update({edgehash:(oldinx,inx)})
+
+        for inx,edge in enumerate(self.route0):
+            if edge[0] > edge[1]:
+                edgehash = str(edge[0])+str(edge[1])
             else:
-                self.hashmap.update({edgehash:(False,inx)})
+                edgehash = str(edge[1])+str(edge[0])
+
+            if self.hashmap.get(edgehash)[1] == False:
+                del self.hashmap[edgehash]
+
     def solve(self):
         self.build_hasmap()
 
-        print self.hashmap
+        
         
 
 
