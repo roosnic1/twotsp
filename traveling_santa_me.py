@@ -48,34 +48,32 @@ class ME(object):
             total += self.weights[c[0]][c[1]]
         return total
 
+    def build_hasmap(self):
+        self.hashmap = dict()
+        for inx edge in enumerate(self.route0):
+            if edge[0]>edge[1]:
+                edgehash = str(edge[0])+str(edge[1])
+            else:
+                edgehash = str(edge[1])+str(edge[0])
 
+            self.hashmap.update(edgehash,(inx,False))
+
+        for inx edge in enumerate(self.route1):
+            if edge[0]>edge[1]:
+                edgehash = str(edge[0])+str(edge[1])
+            else:
+                edgehash = str(edge[1])+str(edge[0])
+
+            if edgehash in self.hashmap:
+                oldinx = self.hashmap.get(edgehash)[0]
+                self.hashmap.update(edgehash,(oldinx,False))
+            else:
+                self.hashmap.update(edgehash,(False,inx))
     def solve(self):
-        while(self.calc_path_duplicates(self.route0,self.route1)):
-            manipulated1 = False
-            for inx0, edge0 in enumerate(self.route0):
-                for inx1, edge1 in enumerate(self.route1):
-                    if( manipulated1 == False and (edge1[0] == edge0[0] and edge1[1] == edge0[1]) or (edge1[1] == edge0[0] and edge1[0] == edge0[1]) ):
-                        print('solving duplicate ({0}) {1} and ({2}) {3}'.format(inx0, edge0, inx1, edge1))
-                        manipulated1 = True
-                        #print('manipulate route0 on {0}'.format(inx0) )                     
+        self.build_hasmap()
 
-                        newpt = self.getNearesPoint(self.route0[inx0][1])
-                        oldpt = self.route0[inx0][1]
-                              
-                        self.route0[inx0] = (self.route0[inx0][0],newpt)
-                        self.route0.insert(inx0+1, (newpt,oldpt) )
-                            
-                        manipulated0 = False
-                        for inx3, edge3 in enumerate(self.route0):
-                                
-                            if edge3[0] == newpt and manipulated0 == False and inx3 != inx0+1:
-                                self.route0[inx3-1] = (self.route0[inx3-1][0],self.route0[inx3][1])
-                                self.route0.remove(self.route0[inx3])
-
-                                manipulated0 = True
-
-                        
-                            
+        print self.hashmap
+        
 
 
                             
