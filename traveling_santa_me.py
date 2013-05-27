@@ -50,25 +50,25 @@ class ME(object):
 
     def build_hasmap(self):
         self.hashmap = dict()
-        for inx edge in enumerate(self.route0):
-            if edge[0]>edge[1]:
+        for inx,edge in enumerate(self.route0):
+            if edge[0] > edge[1]:
                 edgehash = str(edge[0])+str(edge[1])
             else:
                 edgehash = str(edge[1])+str(edge[0])
 
-            self.hashmap.update(edgehash,(inx,False))
+            self.hashmap.update({edgehash:(inx,False)})
 
-        for inx edge in enumerate(self.route1):
-            if edge[0]>edge[1]:
+        for inx,edge in enumerate(self.route1):
+            if edge[0] > edge[1]:
                 edgehash = str(edge[0])+str(edge[1])
             else:
                 edgehash = str(edge[1])+str(edge[0])
 
             if edgehash in self.hashmap:
                 oldinx = self.hashmap.get(edgehash)[0]
-                self.hashmap.update(edgehash,(oldinx,False))
+                self.hashmap.update({edgehash:(oldinx,False)})
             else:
-                self.hashmap.update(edgehash,(False,inx))
+                self.hashmap.update({edgehash:(False,inx)})
     def solve(self):
         self.build_hasmap()
 
