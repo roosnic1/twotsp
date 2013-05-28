@@ -6,6 +6,7 @@ from traveling_santa import TSP
 from traveling_santa_evo import EVO as EVO
 from traveling_santa_evo_acs import EVO as ACS
 from traveling_santa_me import ME as ME
+from traveling_santa_nico import NICO as NICO
 
 import matplotlib.pyplot as plt
 
@@ -41,7 +42,7 @@ if __name__ == '__main__':
     print "*** Step 1: ***"
     data = read_data_file('santa_cities.csv')  # id, x, y
 
-    data = subset_data(data, 15)
+    data = subset_data(data, 150)
 
     #Plot Points
     y = int(data[0][1])
@@ -77,18 +78,54 @@ if __name__ == '__main__':
 
     
     #acs = ACS(data,route0)
-    evo = EVO(data,route0)
+    #evo = EVO(data,route0)
     #profile.run("evo.solve()")
-    evo.solve()
+    #evo.solve()
     #acs.solve()
 
 
-    route1 = evo.tour
+    #route1 = evo.tour
     #route1 = acs.tour
     #route1 = list(route0)
+    #route0 = [(0,1),(1,2),(2,3),(3,4),(4,5),(5,6),(6,7),(7,8),(8,9),(9,10),(10,0)]
+    #route0 = [(0,1),(1,2),(2,3),(3,4),(4,5),(5,6),(6,7),(7,8),(8,0)]
+    nico = NICO(route0)
+    route1 = nico.solve()
+
+    #print route0
+    #print route1
 
 
     q = []
+    
+    route0_lenght = evo.calc_path_lenght(route0)
+    route1_lenght = evo.calc_path_lenght(route1)
+
+    print "*** Step 4: ***"
+    
+    #me = ME(evo.weights,route0, route1)
+    #me.solve()
+ 
+
+    print('Path0: {0}'.format(evo.calc_path_lenght(me.route0)))
+    print('Path0: {0}'.format(me.route0))
+    print('Path1: {0}'.format(evo.calc_path_lenght(me.route1)))
+    print('Path1: {0}'.format(me.route1))
+
+    print('*** Step 5: ***')
+    print "Results:"
+    print('Path0: {0} / {1}'.format(evo.calc_path_lenght(me.route0), route0_lenght))
+    print('Path1: {0} / {1}'.format(evo.calc_path_lenght(me.route1), route1_lenght))
+    print('shortes possible Path {0}'.format(route1_lenght/1.5))
+    print('path0 {0}*'.format(evo.calc_path_lenght(me.route0)/(route0_lenght/1.5)) )
+    print('path1 {0}*'.format(evo.calc_path_lenght(me.route1)/(route0_lenght/1.5)) )
+    print('path0-path1 {0}*'.format(evo.calc_path_lenght(me.route1)/evo.calc_path_lenght(me.route0)) )
+
+
+    route0 = me.route0
+    route1 = me.route1
+
+
     w = []
     for x in range(0,len(route0)):
         data[int(route0[x][0])][1]
@@ -126,28 +163,6 @@ if __name__ == '__main__':
     plt.plot(a,s,'m--')
     plt.show()
 
-    route0_lenght = evo.calc_path_lenght(route0)
-    route1_lenght = evo.calc_path_lenght(route1)
-
-    print "*** Step 4: ***"
-    
-    me = ME(evo.weights,route0, route1)
-    me.solve()
- 
-
-    print('Path0: {0}'.format(evo.calc_path_lenght(me.route0)))
-    print('Path0: {0}'.format(me.route0))
-    print('Path1: {0}'.format(evo.calc_path_lenght(me.route1)))
-    print('Path1: {0}'.format(me.route1))
-
-    print('*** Step 5: ***')
-    print "Results:"
-    print('Path0: {0} / {1}'.format(evo.calc_path_lenght(me.route0), route0_lenght))
-    print('Path1: {0} / {1}'.format(evo.calc_path_lenght(me.route1), route1_lenght))
-    print('shortes possible Path {0}'.format(route1_lenght/1.5))
-    print('path0 {0}*'.format(evo.calc_path_lenght(me.route0)/(route0_lenght/1.5)) )
-    print('path1 {0}*'.format(evo.calc_path_lenght(me.route1)/(route0_lenght/1.5)) )
-    print('path0-path1 {0}*'.format(evo.calc_path_lenght(me.route1)/evo.calc_path_lenght(me.route0)) )
 
 
 
