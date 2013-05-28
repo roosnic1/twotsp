@@ -5,6 +5,8 @@ import numpy as np
 from traveling_santa import TSP
 from traveling_santa_evo import EVO
 
+import matplotlib.pyplot as plt
+
 
 def read_data_file(file):
     basedir = 'data/'
@@ -36,14 +38,49 @@ def subset_data(data, size):
 if __name__ == '__main__':
     print "*** Step 1: ***"
     data = read_data_file('santa_cities.csv')  # id, x, y
+
+
     data = subset_data(data, 15)
+
+    #Plot Points
+    y = int(data[0][1])
+    z = int(data[0][2])
+    u = [int(data[0][1])]
+    v = [int(data[0][2])]
+    for x in range(1,len(data)):
+        u.append(int(data[x][1]))
+        v.append(int(data[x][2]))
+        if int(data[x][1]) > y:
+            y = int(data[x][1])
+
+        if int(data[x][2]) > z:
+            z = int(data[x][2])
+
+
+    #print y,z
+    #print u,v
+
+    plt.plot(u,v,'bo')
+    plt.axis([0,y,0,z])
+    plt.show();
+
 
     print "*** Step 2: ***"
     tsp = TSP(data)
     tsp.solve()
+    #tsp.plot()
 
     print "*** Step 3: ***"
     route0 = tsp.h_tour
+    q = []
+    w = []
+    for x in range(0,len(route0)):
+        q.append(int(route0[x][0]))
+        w.append(int(route0[x][0]))
+
+    plt.plot(q,'g-')
+    plt.show()
+
 
     evo = EVO(data,route0)
     evo.solve()
