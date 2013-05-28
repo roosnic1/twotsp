@@ -17,6 +17,7 @@ class TSP(object):
         self.bias = 0.5
         self.bounder = ec.DiscreteBounder([i for i in range(len(weights))])
         self.maximize = True
+        self._use_ants = False
         
     def __repr__(self):
         return self.__class__.__name__
@@ -35,6 +36,7 @@ class TSP(object):
         return locations
     
     def constructor(self, random, args):
+        self._use_ants = True
         """Return a candidate solution for an ant colony optimization."""
         candidate = []
         while len(candidate) < len(self.weights) - 1:
@@ -64,20 +66,31 @@ class TSP(object):
         return candidate
     
     def evaluator(self, candidates, args):
+#opt
         """Return the fitness values for the given candidates."""
         fitness = [0 for _ in range(len(candidates))]
         douplicates = 1
-        for inx, candidate in enumerate(candidates):
-            total = 0
-            for c in candidate:
-                total += self.weights[c.element[0]][c.element[1]]
-                #find duplicated edges
-                for b in self.route:
-                    if( (b[0] == c.element[0] and b[1] == c.element[1]) or (b[1] == c.element[0] and b[0] == c.element[1]) ):
-                        douplicates += 1
-                        total += self.weights[c.element[0]][c.element[1]]*douplicates
-                        
-            last = (candidate[-1].element[1], candidate[0].element[0])
-            total += self.weights[last[0]][last[1]]
-            fitness[inx] = ( 1 / total )
+        if self._use_ants :
+            for inx, candidate in enumerate(candidates):
+                total = 0
+                for c in candidate:
+                    total += self.weights[c.element[0]][c.element[1]]
+                    #find duplicated edges
+                    for b in self.route:
+                        if( (b[0] == c.element[0] and b[1] == c.element[1]) or (b[1] == c.element[0] and b[0] == c.element[1]) ):
+                            douplicates += 1
+                            total += self.weights[c.element[0]][c.element[1]]#*douplicates
+                            
+                last = (candidate[-1].element[1], candidate[0].element[0])
+                total += self.weights[last[0]][last[1]]
+                fitness[inx] = ( 1 / total )
+        else:
+            
+            for candidate in candidates:
+                total = 0
+                for src, dst in zip(candidate, candidate[1:] + [candidate[0]]):
+                    total += self.weights[src][dst]
+                fitness.append(1 / total)
+
+
         return fitness

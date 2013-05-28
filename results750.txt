@@ -1,0 +1,902 @@
+*** Step 1: ***
+*** Step 2: ***
+triangulating ...
+build graph
+#edges: 2233 #nodes: 750
+computing MST
+took 0.0629999637604
+computing delaunay of odd_deg_nodes
+#edges: 1010 #nodes: 342 342
+computing minimum matching
+took 10.0050001144
+#edges: 171 #nodes: 342
+find euler tour
+took 0.0240001678467
+euler path:  [(0, 552), (552, 681), (681, 646), (646, 402), (402, 508), (508, 70), (70, 365), (365, 546), (546, 228), (228, 285), (285, 88), (88, 2), (2, 285), (285, 595), (595, 95), (95, 38), (38, 522), (522, 440), (440, 520), (520, 440), (440, 15), (15, 724), (724, 110), (110, 15), (15, 311), (311, 563), (563, 629), (629, 311), (311, 428), (428, 28), (28, 336), (336, 200), (200, 28), (28, 351), (351, 382), (382, 389), (389, 303), (303, 643), (643, 584), (584, 83), (83, 618), (618, 600), (600, 8), (8, 169), (169, 438), (438, 358), (358, 191), (191, 710), (710, 89), (89, 616), (616, 550), (550, 616), (616, 86), (86, 122), (122, 496), (496, 348), (348, 49), (49, 122), (122, 460), (460, 569), (569, 372), (372, 460), (460, 682), (682, 332), (332, 346), (346, 550), (550, 324), (324, 412), (412, 743), (743, 497), (497, 66), (66, 10), (10, 179), (179, 417), (417, 27), (27, 560), (560, 664), (664, 74), (74, 264), (264, 581), (581, 569), (569, 581), (581, 12), (12, 18), (18, 188), (188, 159), (159, 326), (326, 159), (159, 679), (679, 364), (364, 127), (127, 704), (704, 509), (509, 482), (482, 562), (562, 250), (250, 580), (580, 427), (427, 472), (472, 333), (333, 146), (146, 539), (539, 174), (174, 492), (492, 397), (397, 493), (493, 397), (397, 174), (174, 22), (22, 644), (644, 275), (275, 572), (572, 275), (275, 109), (109, 75), (75, 441), (441, 46), (46, 691), (691, 233), (233, 730), (730, 480), (480, 45), (45, 699), (699, 410), (410, 433), (433, 246), (246, 433), (433, 206), (206, 554), (554, 543), (543, 160), (160, 450), (450, 273), (273, 694), (694, 92), (92, 379), (379, 92), (92, 315), (315, 208), (208, 315), (315, 451), (451, 408), (408, 421), (421, 451), (451, 660), (660, 432), (432, 422), (422, 617), (617, 246), (246, 29), (29, 257), (257, 220), (220, 123), (123, 521), (521, 650), (650, 728), (728, 72), (72, 744), (744, 79), (79, 606), (606, 296), (296, 602), (602, 218), (218, 41), (41, 248), (248, 468), (468, 692), (692, 516), (516, 398), (398, 690), (690, 612), (612, 54), (54, 243), (243, 170), (170, 113), (113, 500), (500, 186), (186, 154), (154, 586), (586, 478), (478, 624), (624, 369), (369, 276), (276, 419), (419, 334), (334, 63), (63, 369), (369, 13), (13, 507), (507, 141), (141, 23), (23, 33), (33, 371), (371, 343), (343, 388), (388, 39), (39, 23), (23, 741), (741, 118), (118, 702), (702, 555), (555, 670), (670, 304), (304, 558), (558, 459), (459, 308), (308, 235), (235, 17), (17, 443), (443, 281), (281, 541), (541, 435), (435, 14), (14, 20), (20, 24), (24, 150), (150, 593), (593, 641), (641, 150), (150, 179), (179, 406), (406, 436), (436, 632), (632, 96), (96, 181), (181, 618), (618, 622), (622, 164), (164, 181), (181, 623), (623, 557), (557, 392), (392, 93), (93, 514), (514, 320), (320, 499), (499, 287), (287, 693), (693, 235), (235, 675), (675, 103), (103, 280), (280, 457), (457, 103), (103, 454), (454, 558), (558, 670), (670, 718), (718, 253), (253, 5), (5, 525), (525, 461), (461, 659), (659, 610), (610, 362), (362, 367), (367, 104), (104, 367), (367, 354), (354, 132), (132, 468), (468, 50), (50, 340), (340, 279), (279, 489), (489, 403), (403, 155), (155, 157), (157, 155), (155, 585), (585, 1), (1, 196), (196, 424), (424, 162), (162, 543), (543, 160), (160, 527), (527, 225), (225, 527), (527, 656), (656, 147), (147, 211), (211, 625), (625, 573), (573, 211), (211, 335), (335, 648), (648, 142), (142, 335), (335, 376), (376, 252), (252, 203), (203, 745), (745, 669), (669, 745), (745, 295), (295, 603), (603, 223), (223, 688), (688, 475), (475, 145), (145, 475), (475, 735), (735, 674), (674, 665), (665, 289), (289, 313), (313, 329), (329, 357), (357, 204), (204, 166), (166, 291), (291, 548), (548, 165), (165, 381), (381, 631), (631, 719), (719, 306), (306, 321), (321, 120), (120, 666), (666, 649), (649, 67), (67, 221), (221, 338), (338, 653), (653, 481), (481, 377), (377, 481), (481, 732), (732, 204), (204, 732), (732, 399), (399, 198), (198, 660), (660, 198), (198, 501), (501, 341), (341, 416), (416, 341), (341, 425), (425, 418), (418, 647), (647, 76), (76, 444), (444, 647), (647, 698), (698, 638), (638, 299), (299, 742), (742, 67), (67, 597), (597, 19), (19, 68), (68, 321), (321, 490), (490, 342), (342, 242), (242, 442), (442, 90), (90, 722), (722, 359), (359, 636), (636, 705), (705, 540), (540, 149), (149, 540), (540, 709), (709, 476), (476, 405), (405, 277), (277, 709), (709, 487), (487, 409), (409, 658), (658, 56), (56, 202), (202, 297), (297, 249), (249, 61), (61, 636), (636, 307), (307, 26), (26, 447), (447, 115), (115, 189), (189, 609), (609, 146), (146, 11), (11, 215), (215, 703), (703, 462), (462, 268), (268, 272), (272, 268), (268, 319), (319, 108), (108, 685), (685, 509), (509, 127), (127, 667), (667, 237), (237, 309), (309, 439), (439, 506), (506, 726), (726, 322), (322, 439), (439, 53), (53, 575), (575, 323), (323, 706), (706, 513), (513, 491), (491, 556), (556, 517), (517, 177), (177, 473), (473, 591), (591, 607), (607, 723), (723, 738), (738, 680), (680, 135), (135, 35), (35, 628), (628, 601), (601, 129), (129, 380), (380, 465), (465, 385), (385, 380), (380, 437), (437, 673), (673, 434), (434, 194), (194, 707), (707, 374), (374, 194), (194, 583), (583, 368), (368, 652), (652, 413), (413, 176), (176, 701), (701, 413), (413, 604), (604, 128), (128, 85), (85, 414), (414, 230), (230, 192), (192, 207), (207, 230), (230, 199), (199, 143), (143, 168), (168, 52), (52, 224), (224, 144), (144, 627), (627, 224), (224, 466), (466, 729), (729, 619), (619, 737), (737, 662), (662, 6), (6, 594), (594, 47), (47, 420), (420, 401), (401, 98), (98, 360), (360, 30), (30, 733), (733, 498), (498, 152), (152, 713), (713, 467), (467, 256), (256, 467), (467, 477), (477, 356), (356, 561), (561, 734), (734, 255), (255, 4), (4, 193), (193, 9), (9, 239), (239, 48), (48, 727), (727, 536), (536, 361), (361, 134), (134, 536), (536, 396), (396, 535), (535, 404), (404, 574), (574, 98), (98, 259), (259, 401), (401, 349), (349, 51), (51, 429), (429, 729), (729, 366), (366, 445), (445, 654), (654, 614), (614, 201), (201, 426), (426, 143), (143, 244), (244, 639), (639, 746), (746, 639), (639, 21), (21, 637), (637, 100), (100, 697), (697, 173), (173, 697), (697, 55), (55, 390), (390, 266), (266, 301), (301, 716), (716, 635), (635, 36), (36, 668), (668, 715), (715, 668), (668, 213), (213, 234), (234, 530), (530, 344), (344, 503), (503, 592), (592, 479), (479, 456), (456, 69), (69, 503), (503, 171), (171, 282), (282, 339), (339, 378), (378, 78), (78, 178), (178, 112), (112, 314), (314, 182), (182, 231), (231, 655), (655, 178), (178, 446), (446, 378), (378, 117), (117, 77), (77, 240), (240, 495), (495, 717), (717, 394), (394, 511), (511, 173), (173, 156), (156, 91), (91, 269), (269, 171), (171, 282), (282, 566), (566, 672), (672, 227), (227, 153), (153, 645), (645, 731), (731, 153), (153, 270), (270, 111), (111, 265), (265, 739), (739, 676), (676, 542), (542, 209), (209, 130), (130, 661), (661, 130), (130, 505), (505, 553), (553, 483), (483, 568), (568, 286), (286, 568), (568, 62), (62, 140), (140, 137), (137, 283), (283, 721), (721, 158), (158, 576), (576, 488), (488, 605), (605, 531), (531, 395), (395, 531), (531, 463), (463, 65), (65, 463), (463, 330), (330, 247), (247, 504), (504, 136), (136, 615), (615, 479), (479, 330), (330, 151), (151, 587), (587, 262), (262, 596), (596, 383), (383, 131), (131, 708), (708, 139), (139, 575), (575, 708), (708, 260), (260, 205), (205, 387), (387, 25), (25, 350), (350, 84), (84, 212), (212, 565), (565, 634), (634, 31), (31, 711), (711, 177), (177, 517), (517, 331), (331, 711), (711, 588), (588, 60), (60, 3), (3, 736), (736, 3), (3, 485), (485, 325), (325, 114), (114, 327), (327, 740), (740, 582), (582, 635), (635, 621), (621, 116), (116, 148), (148, 411), (411, 529), (529, 677), (677, 386), (386, 494), (494, 533), (533, 35), (35, 284), (284, 82), (82, 391), (391, 312), (312, 317), (317, 64), (64, 547), (547, 738), (738, 613), (613, 470), (470, 559), (559, 43), (43, 469), (469, 347), (347, 474), (474, 599), (599, 263), (263, 197), (197, 633), (633, 229), (229, 589), (589, 222), (222, 663), (663, 106), (106, 375), (375, 251), (251, 58), (58, 187), (187, 469), (469, 293), (293, 43), (43, 687), (687, 714), (714, 502), (502, 32), (32, 161), (161, 32), (32, 107), (107, 590), (590, 748), (748, 657), (657, 101), (101, 226), (226, 337), (337, 34), (34, 689), (689, 455), (455, 119), (119, 549), (549, 278), (278, 671), (671, 200), (200, 133), (133, 292), (292, 578), (578, 453), (453, 510), (510, 121), (121, 430), (430, 545), (545, 449), (449, 97), (97, 471), (471, 545), (545, 316), (316, 302), (302, 407), (407, 370), (370, 216), (216, 373), (373, 102), (102, 310), (310, 537), (537, 232), (232, 290), (290, 16), (16, 59), (59, 290), (290, 214), (214, 567), (567, 298), (298, 274), (274, 678), (678, 598), (598, 57), (57, 294), (294, 81), (81, 486), (486, 345), (345, 71), (71, 300), (300, 570), (570, 415), (415, 608), (608, 700), (700, 464), (464, 99), (99, 217), (217, 620), (620, 217), (217, 725), (725, 105), (105, 363), (363, 684), (684, 448), (448, 528), (528, 684), (684, 183), (183, 696), (696, 87), (87, 630), (630, 640), (640, 124), (124, 526), (526, 180), (180, 328), (328, 163), (163, 526), (526, 124), (124, 534), (534, 175), (175, 138), (138, 611), (611, 138), (138, 261), (261, 620), (620, 271), (271, 238), (238, 686), (686, 254), (254, 318), (318, 579), (579, 683), (683, 452), (452, 195), (195, 258), (258, 37), (37, 458), (458, 37), (37, 683), (683, 695), (695, 519), (519, 40), (40, 80), (80, 353), (353, 571), (571, 80), (80, 515), (515, 267), (267, 210), (210, 538), (538, 642), (642, 720), (720, 626), (626, 400), (400, 393), (393, 167), (167, 551), (551, 512), (512, 551), (551, 749), (749, 185), (185, 484), (484, 7), (7, 267), (267, 642), (642, 219), (219, 44), (44, 626), (626, 564), (564, 400), (400, 577), (577, 94), (94, 431), (431, 42), (42, 172), (172, 747), (747, 384), (384, 73), (73, 423), (423, 523), (523, 524), (524, 355), (355, 245), (245, 73), (73, 518), (518, 544), (544, 288), (288, 352), (352, 288), (288, 651), (651, 305), (305, 532), (532, 712), (712, 190), (190, 184), (184, 241), (241, 236), (236, 125), (125, 184), (184, 126), (126, 0)]
+#edges: 866 #nodes: 750
+start shortcutting
+  --  start shortcutting visit  1
+285 visited! 2
+its a crossing
+connected_visited_neighbors: 88 228
+440 visited! 520
+ looking forwards:  520 15  cutting  440
+15 visited! 110
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+311 visited! 629
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+28 visited! 200
+its a crossing
+connected_visited_neighbors: 336 428
+616 visited! 550
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+122 visited! 49
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+460 visited! 372
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+550 visited! 346
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+569 visited! 581
+its a crossing
+connected_visited_neighbors: 460 372
+581 visited! 569
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+159 visited! 326
+ looking forwards:  326 679  cutting  159
+397 visited! 493
+----------- unhandled situation -----------
+174 visited! 397
+its a crossing
+connected_visited_neighbors: 492 539
+275 visited! 572
+ looking forwards:  572 109  cutting  275
+433 visited! 246
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+92 visited! 379
+ looking forwards:  379 315  cutting  92
+315 visited! 208
+ looking forwards:  208 451  cutting  315
+451 visited! 421
+its a crossing
+connected_visited_neighbors: 208 408
+246 visited! 617
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+369 visited! 63
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+23 visited! 39
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+150 visited! 641
+its a crossing
+connected_visited_neighbors: 24 593
+179 visited! 150
+its a crossing
+connected_visited_neighbors: 417 10
+618 visited! 181
+its a crossing
+connected_visited_neighbors: 600 83
+181 visited! 164
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+235 visited! 693
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+103 visited! 457
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+558 visited! 454
+its a crossing
+connected_visited_neighbors: 459 304
+670 visited! 558
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+367 visited! 104
+ looking forwards:  104 354  cutting  367
+468 visited! 132
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+155 visited! 157
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+543 visited! 162
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+160 visited! 543
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+527 visited! 225
+----------- unhandled situation -----------
+211 visited! 573
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+335 visited! 142
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+745 visited! 669
+ looking forwards:  669 295  cutting  745
+475 visited! 145
+ looking forwards:  145 735  cutting  475
+481 visited! 377
+ looking backwards:  653 377  cutting  481
+204 visited! 732
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+732 visited! 204
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+660 visited! 198
+its a crossing
+connected_visited_neighbors: 451 432
+198 visited! 660
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+341 visited! 416
+ looking forwards:  416 425  cutting  341
+647 visited! 444
+its a crossing
+connected_visited_neighbors: 418 76
+67 visited! 742
+its a crossing
+connected_visited_neighbors: 649 221
+321 visited! 68
+its a crossing
+connected_visited_neighbors: 120 306
+540 visited! 149
+ looking backwards:  705 149  cutting  540
+709 visited! 277
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+636 visited! 61
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+146 visited! 609
+its a crossing
+connected_visited_neighbors: 539 333
+268 visited! 272
+ looking forwards:  272 319  cutting  268
+509 visited! 685
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+127 visited! 509
+its a crossing
+connected_visited_neighbors: 704 364
+439 visited! 322
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+380 visited! 385
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+194 visited! 374
+its a crossing
+connected_visited_neighbors: 434 707
+413 visited! 701
+its a crossing
+connected_visited_neighbors: 176 652
+230 visited! 207
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+224 visited! 627
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+467 visited! 256
+ looking backwards:  713 256  cutting  467
+536 visited! 134
+its a crossing
+connected_visited_neighbors: 361 727
+98 visited! 574
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+401 visited! 259
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+729 visited! 429
+its a crossing
+connected_visited_neighbors: 619 466
+143 visited! 426
+its a crossing
+connected_visited_neighbors: 168 199
+639 visited! 746
+ looking forwards:  746 21  cutting  639
+697 visited! 173
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+668 visited! 715
+ looking forwards:  715 213  cutting  668
+503 visited! 69
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+178 visited! 655
+its a crossing
+connected_visited_neighbors: 78 112
+378 visited! 446
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+173 visited! 511
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+171 visited! 269
+its a crossing
+connected_visited_neighbors: 282 503
+282 visited! 171
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+153 visited! 731
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+130 visited! 661
+ looking forwards:  661 505  cutting  130
+568 visited! 286
+ looking backwards:  483 286  cutting  568
+531 visited! 395
+ looking forwards:  395 463  cutting  531
+463 visited! 65
+ looking forwards:  65 330  cutting  463
+479 visited! 615
+its a crossing
+connected_visited_neighbors: 456 592
+330 visited! 479
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+575 visited! 139
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+708 visited! 575
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+177 visited! 711
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+517 visited! 177
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+711 visited! 331
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+3 visited! 736
+ looking forwards:  736 485  cutting  3
+635 visited! 582
+its a crossing
+connected_visited_neighbors: 36 716
+35 visited! 533
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+738 visited! 547
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+469 visited! 187
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+43 visited! 293
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+32 visited! 161
+----------- unhandled situation -----------
+200 visited! 671
+its a crossing
+connected_visited_neighbors: 336 28
+545 visited! 471
+its a crossing
+connected_visited_neighbors: 449 430
+290 visited! 59
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+217 visited! 620
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+684 visited! 528
+its a crossing
+connected_visited_neighbors: 448 363
+526 visited! 163
+its a crossing
+connected_visited_neighbors: 180 124
+124 visited! 526
+its a crossing
+connected_visited_neighbors: 640 180
+138 visited! 611
+ looking backwards:  175 611  cutting  138
+620 visited! 261
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+37 visited! 458
+ looking backwards:  258 458  cutting  37
+683 visited! 37
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+80 visited! 571
+its a crossing
+connected_visited_neighbors: 40 353
+551 visited! 512
+ looking forwards:  512 749  cutting  551
+267 visited! 7
+its a crossing
+connected_visited_neighbors: 515 210
+642 visited! 267
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+626 visited! 44
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+400 visited! 564
+its a crossing
+connected_visited_neighbors: 626 393
+73 visited! 245
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+288 visited! 352
+ looking forwards:  352 651  cutting  288
+184 visited! 125
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+[(110, 15), (629, 311), (550, 616), (49, 122), (372, 460), (346, 550), (569, 581), (246, 433), (617, 246), (63, 369), (39, 23), (164, 181), (693, 235), (457, 103), (558, 670), (132, 468), (157, 155), (162, 543), (543, 160), (573, 211), (142, 335), (732, 204), (204, 732), (660, 198), (277, 709), (61, 636), (685, 509), (322, 439), (385, 380), (207, 230), (627, 224), (574, 98), (259, 401), (173, 697), (69, 503), (446, 378), (511, 173), (171, 282), (731, 153), (479, 330), (139, 575), (575, 708), (711, 177), (177, 517), (331, 711), (533, 35), (547, 738), (187, 469), (293, 43), (59, 290), (620, 217), (261, 620), (37, 683), (267, 642), (44, 626), (245, 73), (125, 184)]
+#edges: 810 #crossings: 57
+unfuddle (110, 15)
+15 110 724 [520, 110, 724, 629, 311, 440] [311, 440]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (629, 311)
+311 629 563 [428, 110, 15, 336, 563, 629] [428, 15]
+EE - no cross resolving
+unfuddle (550, 616)
+616 550 616 [550, 332, 49, 86, 89, 346] [89, 346]
+EE - no cross resolving
+unfuddle (49, 122)
+122 49 348 [496, 372, 460, 86, 49] [496, 86]
+EE - no cross resolving
+unfuddle (372, 460)
+460 372 460 [74, 332, 372, 86, 569, 122, 682] [569, 122]
+EE - no cross resolving
+unfuddle (346, 550)
+550 346 332 [616, 324, 346, 412, 89] [616, 412]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (569, 581)
+581 569 581 [264, 569, 74, 12] [74, 12]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (246, 433)
+433 246 433 [617, 410, 246, 206] [617, 410]
+EE - no cross resolving
+unfuddle (617, 246)
+246 617 422 [416, 617, 433, 425, 410, 29] [416, 433]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (63, 369)
+369 63 334 [624, 276, 13, 63] [624, 276]
+EE - no cross resolving
+unfuddle (39, 23)
+23 39 388 [33, 419, 39, 141, 276, 118, 507, 702] [419]
+EE - no cross resolving
+unfuddle (164, 181)
+181 164 622 [96, 618, 164, 557, 623] [96, 557]
+EE - no cross resolving
+unfuddle (693, 235)
+235 693 287 [17, 675, 308, 693, 287] [17, 308]
+EE - no cross resolving
+unfuddle (457, 103)
+103 457 280 [280, 457, 675, 454] [675]
+unfuddle (558, 670)
+670 558 454 [371, 304, 555, 558, 718] [304]
+EE - no cross resolving
+unfuddle (132, 468)
+468 132 354 [132, 516, 50, 340, 279, 692, 573] [50, 692]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (157, 155)
+155 157 155 [656, 1, 403, 157, 585] [656, 403, 585]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (162, 543)
+543 162 424 [160, 450, 424, 554, 162, 206] [160]
+EE - no cross resolving
+unfuddle (543, 160)
+160 543 554 [450, 543, 162, 527] [450, 162]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (573, 211)
+211 573 625 [489, 335, 625, 147, 376, 573] [489, 376]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (142, 335)
+335 142 648 [648, 376, 211, 147, 142] [147]
+EE - no cross resolving
+unfuddle (732, 204)
+204 732 481 [291, 548, 357, 166, 329, 338, 732] [329, 338]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (204, 732)
+732 204 732 [481, 329, 204, 653, 399, 338] [329, 338]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (660, 198)
+198 660 198 [416, 377, 660, 501, 399] [416, 399]
+EE - no cross resolving
+unfuddle (277, 709)
+709 277 405 [409, 476, 277, 487] [409, 476]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (61, 636)
+636 61 249 [705, 307, 61, 359] [705, 359]
+EE - no cross resolving
+unfuddle (685, 509)
+509 685 108 [704, 482, 580, 108, 685, 127] [704, 127]
+EE - no cross resolving
+unfuddle (322, 439)
+439 322 726 [322, 309, 237, 53, 726, 506, 575] [237, 506]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (385, 380)
+380 385 465 [129, 465, 437, 385] [129, 437]
+EE - no cross resolving
+unfuddle (207, 230)
+230 207 192 [192, 199, 168, 207, 85, 414] [168]
+EE - no cross resolving
+unfuddle (627, 224)
+224 627 144 [168, 207, 144, 466, 627, 52, 729] [207]
+EE - no cross resolving
+unfuddle (574, 98)
+98 574 404 [360, 401, 259, 574] [360, 259]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (259, 401)
+401 259 98 [98, 259, 420, 349, 47] [349, 47]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (173, 697)
+697 173 697 [100, 266, 156, 173, 390] [100, 156]
+EE - no cross resolving
+unfuddle (69, 503)
+503 69 456 [69, 234, 171, 592, 344, 282, 91] [592, 344, 282]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (446, 378)
+378 446 178 [231, 77, 78, 339, 117, 566, 446] [231, 77, 78]
+EE - no cross resolving
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (511, 173)
+173 511 394 [697, 201, 156, 100, 511] [201, 156]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (171, 282)
+282 171 269 [672, 69, 171, 270, 111, 592, 339, 566, 503] [339, 503]
+EE - no cross resolving
+unfuddle (731, 153)
+153 731 645 [265, 731, 645, 270, 227] [227]
+unfuddle (479, 330)
+330 479 615 [65, 136, 247, 463, 151, 504, 479] [504]
+EE - no cross resolving
+unfuddle (139, 575)
+575 139 708 [513, 323, 708, 139, 53, 439, 309] [513, 53]
+EE - no cross resolving
+unfuddle (575, 708)
+708 575 323 [387, 260, 139, 205, 53, 575, 383] [139, 53]
+EE - no cross resolving
+unfuddle (711, 177)
+177 711 31 [473, 331, 556, 517, 711] [473, 331]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (177, 517)
+517 177 711 [513, 331, 139, 556, 177] [331, 556]
+EE - no cross resolving
+unfuddle (331, 711)
+711 331 517 [177, 473, 331, 588, 31] [177, 31]
+EE - no cross resolving
+unfuddle (533, 35)
+35 533 494 [628, 284, 533, 135] [628, 135]
+EE - no cross resolving
+unfuddle (547, 738)
+738 547 64 [312, 547, 613, 723, 391] [312, 723]
+EE - no cross resolving
+unfuddle (187, 469)
+469 187 58 [465, 347, 187, 293, 43] [347, 293]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (293, 43)
+43 293 469 [613, 559, 82, 469, 470, 687, 293] [82, 687]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (59, 290)
+290 59 16 [263, 232, 16, 214, 567, 537, 59] [263]
+EE - no cross resolving
+unfuddle (620, 217)
+217 620 217 [105, 99, 620, 725, 261] [99, 261]
+EE - no cross resolving
+unfuddle (261, 620)
+620 261 138 [217, 99, 261, 238, 271] [217, 271]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (37, 683)
+683 37 458 [258, 579, 452, 37, 238, 695, 254] [258, 695]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (267, 642)
+642 267 7 [458, 267, 626, 720, 210, 538, 219] [210, 538, 219]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (44, 626)
+626 44 219 [400, 642, 393, 458, 44, 720, 564] [393, 720]
+EE - no cross resolving
+unfuddle (245, 73)
+73 245 355 [384, 523, 747, 245, 518] [523, 518]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (125, 184)
+184 125 236 [352, 646, 241, 305, 190, 508, 125, 126] [352, 241, 126]
+EE - no cross resolving
+EE - no cross resolving
+EE - no cross resolving
+  --  start shortcutting visit  2
+15 visited! 110
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+550 visited! 346
+its a crossing
+connected_visited_neighbors: 616 89
+581 visited! 569
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+709 visited! 277
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+732 visited! 204
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+204 visited! 166
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+335 visited! 648
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+211 visited! 625
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+527 visited! 225
+ looking backwards:  656 225  cutting  527
+670 visited! 304
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+23 visited! 33
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+468 visited! 692
+its a crossing
+connected_visited_neighbors: 132 50
+160 visited! 450
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+543 visited! 160
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+246 visited! 433
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+397 visited! 493
+ looking backwards:  174 493  cutting  397
+439 visited! 322
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+177 visited! 517
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+230 visited! 207
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+224 visited! 627
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+98 visited! 574
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+401 visited! 259
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+173 visited! 156
+its a crossing
+connected_visited_neighbors: 697 100
+378 visited! 78
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+330 visited! 479
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+469 visited! 187
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+43 visited! 293
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+32 visited! 161
+ looking forwards:  161 107  cutting  32
+290 visited! 59
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+620 visited! 261
+its a crossing
+connected_visited_neighbors: 217 99
+683 visited! 37
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+73 visited! 245
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+184 visited! 125
+its a crossing
+connected_visited_neighbors: None None
+#its a real crossing!
+[(110, 15), (569, 581), (277, 709), (204, 732), (166, 204), (648, 335), (625, 211), (304, 670), (33, 23), (450, 160), (160, 543), (433, 246), (322, 439), (517, 177), (207, 230), (627, 224), (574, 98), (259, 401), (78, 378), (479, 330), (187, 469), (293, 43), (59, 290), (37, 683), (245, 73), (125, 184)]
+#edges: 776 #crossings: 26
+unfuddle (110, 15)
+15 110 724 [520, 110, 724, 629, 311, 440] [311, 440]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (569, 581)
+581 569 581 [264, 569, 74, 12] [74, 12]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (277, 709)
+709 277 405 [409, 476, 277, 487] [409, 476]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (204, 732)
+732 204 732 [481, 329, 204, 653, 399, 338] [329, 338]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (166, 204)
+204 166 291 [291, 548, 357, 166, 329, 338, 732] [548, 338]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (648, 335)
+335 648 142 [648, 376, 211, 147, 142] [376]
+unfuddle (625, 211)
+211 625 573 [489, 335, 625, 147, 376, 573] [489, 376]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (304, 670)
+670 304 459 [371, 304, 555, 558, 718] [371, 558, 718]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (33, 23)
+23 33 371 [33, 419, 39, 141, 276, 118, 507, 702] [419, 702]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (450, 160)
+160 450 273 [450, 543, 162, 527] [543, 527]
+EE - no cross resolving
+unfuddle (160, 543)
+543 160 543 [160, 450, 424, 554, 162, 206] [450, 162]
+EE - no cross resolving
+unfuddle (433, 246)
+246 433 206 [416, 617, 433, 425, 410, 29] [617, 410]
+EE - no cross resolving
+unfuddle (322, 439)
+439 322 726 [322, 309, 237, 53, 726, 506, 575] [237, 506]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (517, 177)
+177 517 331 [473, 331, 556, 517, 711] [556]
+unfuddle (207, 230)
+230 207 192 [192, 199, 168, 207, 85, 414] [168]
+EE - no cross resolving
+unfuddle (627, 224)
+224 627 144 [168, 207, 144, 466, 627, 52, 729] [207]
+EE - no cross resolving
+unfuddle (574, 98)
+98 574 404 [360, 401, 259, 574] [360, 259]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (259, 401)
+401 259 98 [98, 259, 420, 349, 47] [349, 47]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (78, 378)
+378 78 112 [231, 77, 78, 339, 117, 566, 446] [77, 446]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (479, 330)
+330 479 615 [65, 136, 247, 463, 151, 504, 479] [504]
+EE - no cross resolving
+unfuddle (187, 469)
+469 187 58 [465, 347, 187, 293, 43] [347, 293]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (293, 43)
+43 293 469 [613, 559, 82, 469, 470, 687, 293] [82, 687]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (59, 290)
+290 59 16 [263, 232, 16, 214, 567, 537, 59] [263]
+EE - no cross resolving
+unfuddle (37, 683)
+683 37 458 [258, 579, 452, 37, 238, 695, 254] [258, 695]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (245, 73)
+73 245 355 [384, 523, 747, 245, 518] [523, 518]
+EE - no cross resolving
+EE - no cross resolving
+unfuddle (125, 184)
+184 125 236 [352, 646, 241, 305, 190, 508, 125, 126] [352, 241, 126]
+EE - no cross resolving
+EE - no cross resolving
+EE - no cross resolving
+  --  start shortcutting visit  3
+15 visited! 110
+----------- unhandled situation -----------
+581 visited! 569
+ looking forwards:  569 12  cutting  581
+709 visited! 277
+----------- unhandled situation -----------
+732 visited! 204
+----------- unhandled situation -----------
+204 visited! 166
+----------- unhandled situation -----------
+211 visited! 625
+----------- unhandled situation -----------
+23 visited! 33
+----------- unhandled situation -----------
+439 visited! 322
+----------- unhandled situation -----------
+230 visited! 207
+----------- unhandled situation -----------
+224 visited! 627
+----------- unhandled situation -----------
+98 visited! 574
+ looking forwards:  574 259  cutting  98
+401 visited! 259
+ looking forwards:  259 349  cutting  401
+378 visited! 78
+----------- unhandled situation -----------
+330 visited! 479
+----------- unhandled situation -----------
+469 visited! 187
+ looking forwards:  187 293  cutting  469
+43 visited! 293
+ looking forwards:  293 687  cutting  43
+290 visited! 59
+----------- unhandled situation -----------
+683 visited! 37
+ looking forwards:  37 695  cutting  683
+73 visited! 245
+ looking forwards:  245 518  cutting  73
+184 visited! 125
+ looking forwards:  125 126  cutting  184
+[]
+#edges: 762 #crossings: 0
+  --  start shortcutting visit  4
+15 visited! 110
+ looking forwards:  110 629  cutting  15
+709 visited! 277
+ looking forwards:  277 487  cutting  709
+732 visited! 204
+ looking forwards:  204 481  cutting  732
+204 visited! 166
+ looking forwards:  166 357  cutting  204
+211 visited! 625
+ looking forwards:  625 147  cutting  211
+23 visited! 33
+ looking forwards:  33 141  cutting  23
+439 visited! 322
+ looking forwards:  322 53  cutting  439
+230 visited! 207
+ looking forwards:  207 199  cutting  230
+224 visited! 627
+ looking forwards:  627 466  cutting  224
+378 visited! 78
+ looking forwards:  78 339  cutting  378
+330 visited! 479
+ looking forwards:  479 151  cutting  330
+290 visited! 59
+ looking forwards:  59 214  cutting  290
+[]
+#edges: 750 #crossings: 0
+  --  start shortcutting visit  5
+[]
+#edges: 750 #crossings: 0
+took 0.118000030518
+#edges: 750 path len: 369411.801401
+*** Step 3: ***
+Best Solution:
+Distance: 6546477.57628
+('Tour:  ', [(442, 677), (677, 320), (320, 27), (27, 61), (61, 711), (711, 156), (156, 463), (463, 652), (652, 59), (59, 377), (377, 103), (103, 257), (257, 169), (169, 150), (150, 170), (170, 510), (510, 556), (556, 355), (355, 736), (736, 425), (425, 126), (126, 518), (518, 517), (517, 302), (302, 577), (577, 8), (8, 710), (710, 675), (675, 46), (46, 385), (385, 342), (342, 291), (291, 335), (335, 499), (499, 471), (471, 715), (715, 485), (485, 104), (104, 112), (112, 436), (436, 700), (700, 602), (602, 520), (520, 643), (643, 332), (332, 615), (615, 516), (516, 496), (496, 603), (603, 368), (368, 562), (562, 58), (58, 256), (256, 194), (194, 51), (51, 118), (118, 456), (456, 417), (417, 466), (466, 681), (681, 91), (91, 605), (605, 232), (232, 451), (451, 359), (359, 287), (287, 430), (430, 434), (434, 180), (180, 634), (634, 633), (633, 420), (420, 297), (297, 672), (672, 549), (549, 69), (69, 482), (482, 248), (248, 508), (508, 223), (223, 655), (655, 406), (406, 464), (464, 470), (470, 202), (202, 229), (229, 199), (199, 210), (210, 220), (220, 293), (293, 276), (276, 117), (117, 393), (393, 663), (663, 192), (192, 7), (7, 344), (344, 141), (141, 395), (395, 469), (469, 724), (724, 539), (539, 298), (298, 279), (279, 397), (397, 555), (555, 534), (534, 740), (740, 197), (197, 188), (188, 617), (617, 82), (82, 487), (487, 140), (140, 243), (243, 152), (152, 405), (405, 612), (612, 325), (325, 53), (53, 651), (651, 407), (407, 579), (579, 746), (746, 329), (329, 130), (130, 723), (723, 446), (446, 277), (277, 145), (145, 678), (678, 161), (161, 392), (392, 450), (450, 351), (351, 0), (0, 49), (49, 139), (139, 288), (288, 568), (568, 530), (530, 491), (491, 186), (186, 468), (468, 454), (454, 657), (657, 307), (307, 623), (623, 154), (154, 137), (137, 448), (448, 521), (521, 490), (490, 467), (467, 187), (187, 544), (544, 345), (345, 78), (78, 584), (584, 309), (309, 39), (39, 503), (503, 182), (182, 679), (679, 583), (583, 670), (670, 177), (177, 155), (155, 370), (370, 127), (127, 115), (115, 507), (507, 608), (608, 645), (645, 251), (251, 717), (717, 573), (573, 1), (1, 566), (566, 609), (609, 67), (67, 349), (349, 734), (734, 233), (233, 476), (476, 16), (16, 512), (512, 690), (690, 122), (122, 416), (416, 356), (356, 289), (289, 570), (570, 208), (208, 433), (433, 472), (472, 399), (399, 600), (600, 479), (479, 222), (222, 685), (685, 745), (745, 692), (692, 107), (107, 741), (741, 214), (214, 26), (26, 224), (224, 461), (461, 110), (110, 239), (239, 731), (731, 560), (560, 732), (732, 423), (423, 674), (674, 272), (272, 418), (418, 509), (509, 551), (551, 90), (90, 215), (215, 696), (696, 236), (236, 263), (263, 622), (622, 409), (409, 301), (301, 742), (742, 85), (85, 498), (498, 303), (303, 235), (235, 226), (226, 99), (99, 728), (728, 25), (25, 641), (641, 683), (683, 21), (21, 659), (659, 333), (333, 278), (278, 488), (488, 348), (348, 164), (164, 274), (274, 601), (601, 444), (444, 501), (501, 557), (557, 554), (554, 666), (666, 101), (101, 14), (14, 484), (484, 131), (131, 739), (739, 66), (66, 24), (24, 596), (596, 689), (689, 553), (553, 504), (504, 92), (92, 6), (6, 225), (225, 238), (238, 87), (87, 525), (525, 497), (497, 373), (373, 347), (347, 737), (737, 598), (598, 473), (473, 262), (262, 253), (253, 207), (207, 408), (408, 532), (532, 12), (12, 658), (658, 478), (478, 19), (19, 426), (426, 299), (299, 121), (121, 321), (321, 65), (65, 432), (432, 511), (511, 515), (515, 259), (259, 294), (294, 632), (632, 729), (729, 457), (457, 665), (665, 30), (30, 604), (604, 86), (86, 111), (111, 11), (11, 319), (319, 296), (296, 167), (167, 96), (96, 443), (443, 574), (574, 616), (616, 217), (217, 735), (735, 730), (730, 142), (142, 673), (673, 147), (147, 15), (15, 57), (57, 260), (260, 166), (166, 125), (125, 384), (384, 749), (749, 231), (231, 439), (439, 528), (528, 581), (581, 428), (428, 460), (460, 438), (438, 17), (17, 564), (564, 389), (389, 381), (381, 244), (244, 720), (720, 686), (686, 158), (158, 328), (328, 462), (462, 613), (613, 105), (105, 340), (340, 527), (527, 55), (55, 35), (35, 458), (458, 13), (13, 713), (713, 184), (184, 316), (316, 195), (195, 500), (500, 157), (157, 372), (372, 726), (726, 113), (113, 495), (495, 590), (590, 211), (211, 589), (589, 76), (76, 171), (171, 414), (414, 42), (42, 119), (119, 314), (314, 123), (123, 163), (163, 401), (401, 614), (614, 334), (334, 73), (73, 522), (522, 71), (71, 721), (721, 148), (148, 213), (213, 474), (474, 250), (250, 168), (168, 134), (134, 285), (285, 190), (190, 747), (747, 400), (400, 748), (748, 704), (704, 255), (255, 109), (109, 313), (313, 362), (362, 514), (514, 538), (538, 352), (352, 531), (531, 588), (588, 337), (337, 691), (691, 234), (234, 323), (323, 714), (714, 379), (379, 353), (353, 290), (290, 133), (133, 183), (183, 153), (153, 136), (136, 75), (75, 669), (669, 693), (693, 284), (284, 305), (305, 34), (34, 647), (647, 341), (341, 502), (502, 378), (378, 519), (519, 267), (267, 270), (270, 206), (206, 494), (494, 149), (149, 36), (36, 505), (505, 369), (369, 718), (718, 151), (151, 310), (310, 481), (481, 172), (172, 404), (404, 179), (179, 37), (37, 688), (688, 9), (9, 492), (492, 212), (212, 44), (44, 315), (315, 639), (639, 706), (706, 580), (580, 374), (374, 396), (396, 382), (382, 273), (273, 174), (174, 536), (536, 5), (5, 189), (189, 308), (308, 475), (475, 435), (435, 413), (413, 419), (419, 705), (705, 327), (327, 441), (441, 357), (357, 640), (640, 178), (178, 415), (415, 599), (599, 245), (245, 219), (219, 33), (33, 547), (547, 587), (587, 135), (135, 176), (176, 165), (165, 216), (216, 412), (412, 572), (572, 227), (227, 32), (32, 483), (483, 268), (268, 459), (459, 116), (116, 699), (699, 571), (571, 427), (427, 524), (524, 629), (629, 56), (56, 671), (671, 493), (493, 668), (668, 592), (592, 144), (144, 98), (98, 203), (203, 31), (31, 29), (29, 743), (743, 540), (540, 237), (237, 644), (644, 621), (621, 390), (390, 725), (725, 74), (74, 43), (43, 265), (265, 561), (561, 391), (391, 667), (667, 230), (230, 611), (611, 744), (744, 3), (3, 209), (209, 698), (698, 97), (97, 4), (4, 361), (361, 635), (635, 523), (523, 606), (606, 649), (649, 54), (54, 79), (79, 594), (594, 593), (593, 95), (95, 191), (191, 682), (682, 575), (575, 424), (424, 625), (625, 258), (258, 440), (440, 60), (60, 429), (429, 221), (221, 350), (350, 162), (162, 543), (543, 545), (545, 618), (618, 676), (676, 375), (375, 22), (22, 637), (637, 280), (280, 506), (506, 582), (582, 585), (585, 712), (712, 84), (84, 709), (709, 626), (626, 83), (83, 535), (535, 360), (360, 240), (240, 569), (569, 138), (138, 727), (727, 542), (542, 283), (283, 266), (266, 552), (552, 41), (41, 367), (367, 68), (68, 567), (567, 559), (559, 716), (716, 102), (102, 198), (198, 638), (638, 489), (489, 306), (306, 304), (304, 159), (159, 383), (383, 2), (2, 70), (70, 437), (437, 64), (64, 630), (630, 722), (722, 269), (269, 114), (114, 565), (565, 354), (354, 619), (619, 318), (318, 597), (597, 88), (88, 346), (346, 330), (330, 94), (94, 546), (546, 388), (388, 128), (128, 366), (366, 336), (336, 624), (624, 403), (403, 81), (81, 480), (480, 28), (28, 175), (175, 282), (282, 247), (247, 661), (661, 578), (578, 656), (656, 100), (100, 738), (738, 533), (533, 646), (646, 662), (662, 733), (733, 204), (204, 410), (410, 719), (719, 627), (627, 550), (550, 411), (411, 193), (193, 455), (455, 295), (295, 50), (50, 228), (228, 317), (317, 680), (680, 52), (52, 275), (275, 548), (548, 453), (453, 264), (264, 701), (701, 271), (271, 537), (537, 312), (312, 292), (292, 591), (591, 620), (620, 660), (660, 160), (160, 338), (338, 576), (576, 529), (529, 249), (249, 697), (697, 648), (648, 200), (200, 80), (80, 18), (18, 636), (636, 324), (324, 358), (358, 376), (376, 447), (447, 558), (558, 702), (702, 363), (363, 77), (77, 300), (300, 326), (326, 343), (343, 402), (402, 120), (120, 707), (707, 181), (181, 628), (628, 241), (241, 610), (610, 513), (513, 322), (322, 422), (422, 62), (62, 254), (254, 311), (311, 563), (563, 607), (607, 595), (595, 394), (394, 196), (196, 687), (687, 642), (642, 205), (205, 449), (449, 684), (684, 371), (371, 40), (40, 89), (89, 45), (45, 246), (246, 72), (72, 653), (653, 421), (421, 10), (10, 23), (23, 281), (281, 201), (201, 242), (242, 132), (132, 20), (20, 465), (465, 654), (654, 286), (286, 387), (387, 364), (364, 398), (398, 124), (124, 146), (146, 486), (486, 173), (173, 695), (695, 365), (365, 541), (541, 631), (631, 452), (452, 650), (650, 48), (48, 218), (218, 477), (477, 252), (252, 108), (108, 526), (526, 331), (331, 386), (386, 63), (63, 703), (703, 339), (339, 431), (431, 143), (143, 380), (380, 694), (694, 129), (129, 708), (708, 664), (664, 261), (261, 586), (586, 47), (47, 93), (93, 106), (106, 445), (445, 38), (38, 185), (185, 442)])
+('Route: ', [(0, 552), (552, 681), (681, 646), (646, 402), (402, 508), (508, 70), (70, 365), (365, 546), (546, 228), (228, 88), (88, 2), (2, 285), (285, 595), (595, 95), (95, 38), (38, 522), (522, 440), (440, 520), (520, 15), (15, 724), (724, 110), (110, 629), (629, 563), (563, 311), (311, 428), (428, 336), (336, 28), (28, 351), (351, 382), (382, 389), (389, 303), (303, 643), (643, 584), (584, 83), (83, 600), (600, 8), (8, 169), (169, 438), (438, 358), (358, 191), (191, 710), (710, 89), (89, 616), (616, 86), (86, 49), (49, 348), (348, 496), (496, 122), (122, 372), (372, 460), (460, 682), (682, 332), (332, 346), (346, 550), (550, 324), (324, 412), (412, 743), (743, 497), (497, 66), (66, 10), (10, 417), (417, 27), (27, 560), (560, 664), (664, 74), (74, 264), (264, 581), (581, 569), (569, 12), (12, 18), (18, 188), (188, 159), (159, 326), (326, 679), (679, 364), (364, 704), (704, 685), (685, 108), (108, 319), (319, 272), (272, 268), (268, 462), (462, 703), (703, 215), (215, 11), (11, 146), (146, 609), (609, 189), (189, 115), (115, 447), (447, 26), (26, 307), (307, 636), (636, 705), (705, 149), (149, 540), (540, 709), (709, 476), (476, 405), (405, 277), (277, 487), (487, 409), (409, 658), (658, 56), (56, 202), (202, 297), (297, 249), (249, 61), (61, 359), (359, 722), (722, 90), (90, 442), (442, 242), (242, 342), (342, 490), (490, 321), (321, 68), (68, 19), (19, 597), (597, 67), (67, 742), (742, 299), (299, 638), (638, 698), (698, 647), (647, 444), (444, 76), (76, 418), (418, 425), (425, 416), (416, 341), (341, 501), (501, 198), (198, 660), (660, 399), (399, 732), (732, 204), (204, 481), (481, 377), (377, 653), (653, 338), (338, 221), (221, 649), (649, 666), (666, 120), (120, 306), (306, 719), (719, 631), (631, 381), (381, 165), (165, 548), (548, 291), (291, 166), (166, 357), (357, 329), (329, 313), (313, 289), (289, 665), (665, 674), (674, 735), (735, 145), (145, 475), (475, 688), (688, 223), (223, 603), (603, 295), (295, 669), (669, 745), (745, 203), (203, 252), (252, 376), (376, 648), (648, 142), (142, 335), (335, 211), (211, 573), (573, 625), (625, 147), (147, 656), (656, 225), (225, 527), (527, 450), (450, 273), (273, 694), (694, 92), (92, 379), (379, 315), (315, 208), (208, 408), (408, 421), (421, 451), (451, 432), (432, 422), (422, 617), (617, 433), (433, 206), (206, 554), (554, 543), (543, 160), (160, 162), (162, 424), (424, 196), (196, 1), (1, 585), (585, 155), (155, 157), (157, 403), (403, 489), (489, 279), (279, 340), (340, 50), (50, 132), (132, 354), (354, 104), (104, 367), (367, 362), (362, 610), (610, 659), (659, 461), (461, 525), (525, 5), (5, 253), (253, 718), (718, 304), (304, 459), (459, 308), (308, 693), (693, 287), (287, 499), (499, 320), (320, 514), (514, 93), (93, 392), (392, 557), (557, 623), (623, 181), (181, 618), (618, 622), (622, 164), (164, 96), (96, 632), (632, 436), (436, 406), (406, 179), (179, 150), (150, 641), (641, 593), (593, 24), (24, 20), (20, 14), (14, 435), (435, 541), (541, 281), (281, 443), (443, 17), (17, 235), (235, 675), (675, 457), (457, 280), (280, 103), (103, 454), (454, 558), (558, 670), (670, 555), (555, 702), (702, 118), (118, 741), (741, 23), (23, 39), (39, 388), (388, 343), (343, 371), (371, 33), (33, 141), (141, 507), (507, 13), (13, 369), (369, 276), (276, 419), (419, 334), (334, 63), (63, 624), (624, 478), (478, 586), (586, 154), (154, 186), (186, 500), (500, 113), (113, 170), (170, 243), (243, 54), (54, 612), (612, 690), (690, 398), (398, 516), (516, 692), (692, 468), (468, 248), (248, 41), (41, 218), (218, 602), (602, 296), (296, 606), (606, 79), (79, 744), (744, 72), (72, 728), (728, 650), (650, 521), (521, 123), (123, 220), (220, 257), (257, 29), (29, 246), (246, 410), (410, 699), (699, 45), (45, 480), (480, 730), (730, 233), (233, 691), (691, 46), (46, 441), (441, 75), (75, 109), (109, 572), (572, 275), (275, 644), (644, 22), (22, 174), (174, 493), (493, 397), (397, 492), (492, 539), (539, 333), (333, 472), (472, 427), (427, 580), (580, 250), (250, 562), (562, 482), (482, 509), (509, 127), (127, 667), (667, 237), (237, 309), (309, 439), (439, 506), (506, 726), (726, 322), (322, 53), (53, 139), (139, 575), (575, 323), (323, 706), (706, 513), (513, 491), (491, 556), (556, 517), (517, 331), (331, 177), (177, 473), (473, 591), (591, 607), (607, 723), (723, 547), (547, 64), (64, 317), (317, 312), (312, 391), (391, 82), (82, 284), (284, 35), (35, 628), (628, 601), (601, 129), (129, 385), (385, 465), (465, 380), (380, 437), (437, 673), (673, 434), (434, 707), (707, 374), (374, 194), (194, 583), (583, 368), (368, 652), (652, 176), (176, 701), (701, 413), (413, 604), (604, 128), (128, 85), (85, 414), (414, 230), (230, 192), (192, 207), (207, 199), (199, 168), (168, 52), (52, 224), (224, 144), (144, 627), (627, 466), (466, 619), (619, 737), (737, 662), (662, 6), (6, 594), (594, 47), (47, 420), (420, 401), (401, 98), (98, 360), (360, 30), (30, 733), (733, 498), (498, 152), (152, 713), (713, 256), (256, 467), (467, 477), (477, 356), (356, 561), (561, 734), (734, 255), (255, 4), (4, 193), (193, 9), (9, 239), (239, 48), (48, 727), (727, 361), (361, 134), (134, 536), (536, 396), (396, 535), (535, 404), (404, 574), (574, 259), (259, 349), (349, 51), (51, 429), (429, 729), (729, 366), (366, 445), (445, 654), (654, 614), (614, 201), (201, 426), (426, 143), (143, 244), (244, 639), (639, 746), (746, 21), (21, 637), (637, 100), (100, 697), (697, 55), (55, 390), (390, 266), (266, 301), (301, 716), (716, 36), (36, 668), (668, 715), (715, 213), (213, 234), (234, 530), (530, 344), (344, 69), (69, 456), (456, 592), (592, 503), (503, 171), (171, 269), (269, 91), (91, 156), (156, 173), (173, 511), (511, 394), (394, 717), (717, 495), (495, 240), (240, 77), (77, 117), (117, 378), (378, 446), (446, 178), (178, 655), (655, 231), (231, 182), (182, 314), (314, 112), (112, 78), (78, 339), (339, 282), (282, 566), (566, 672), (672, 227), (227, 731), (731, 645), (645, 153), (153, 270), (270, 111), (111, 265), (265, 739), (739, 676), (676, 542), (542, 209), (209, 130), (130, 661), (661, 505), (505, 553), (553, 483), (483, 286), (286, 568), (568, 62), (62, 140), (140, 137), (137, 283), (283, 721), (721, 158), (158, 576), (576, 488), (488, 605), (605, 531), (531, 395), (395, 463), (463, 65), (65, 330), (330, 247), (247, 504), (504, 136), (136, 615), (615, 479), (479, 151), (151, 587), (587, 262), (262, 596), (596, 383), (383, 131), (131, 708), (708, 260), (260, 205), (205, 387), (387, 25), (25, 350), (350, 84), (84, 212), (212, 565), (565, 634), (634, 31), (31, 711), (711, 588), (588, 60), (60, 3), (3, 736), (736, 485), (485, 325), (325, 114), (114, 327), (327, 740), (740, 582), (582, 635), (635, 621), (621, 116), (116, 148), (148, 411), (411, 529), (529, 677), (677, 386), (386, 494), (494, 533), (533, 135), (135, 680), (680, 738), (738, 613), (613, 470), (470, 559), (559, 43), (43, 469), (469, 347), (347, 474), (474, 599), (599, 263), (263, 197), (197, 633), (633, 229), (229, 589), (589, 222), (222, 663), (663, 106), (106, 375), (375, 251), (251, 58), (58, 187), (187, 293), (293, 687), (687, 714), (714, 502), (502, 32), (32, 161), (161, 107), (107, 590), (590, 748), (748, 657), (657, 101), (101, 226), (226, 337), (337, 34), (34, 689), (689, 455), (455, 119), (119, 549), (549, 278), (278, 671), (671, 200), (200, 133), (133, 292), (292, 578), (578, 453), (453, 510), (510, 121), (121, 430), (430, 449), (449, 97), (97, 471), (471, 545), (545, 316), (316, 302), (302, 407), (407, 370), (370, 216), (216, 373), (373, 102), (102, 310), (310, 537), (537, 232), (232, 290), (290, 16), (16, 59), (59, 214), (214, 567), (567, 298), (298, 274), (274, 678), (678, 598), (598, 57), (57, 294), (294, 81), (81, 486), (486, 345), (345, 71), (71, 300), (300, 570), (570, 415), (415, 608), (608, 700), (700, 464), (464, 99), (99, 217), (217, 725), (725, 105), (105, 363), (363, 448), (448, 528), (528, 684), (684, 183), (183, 696), (696, 87), (87, 630), (630, 640), (640, 180), (180, 328), (328, 163), (163, 526), (526, 124), (124, 534), (534, 175), (175, 611), (611, 138), (138, 261), (261, 620), (620, 271), (271, 238), (238, 686), (686, 254), (254, 318), (318, 579), (579, 683), (683, 452), (452, 195), (195, 258), (258, 458), (458, 37), (37, 695), (695, 519), (519, 40), (40, 353), (353, 571), (571, 80), (80, 515), (515, 210), (210, 538), (538, 267), (267, 7), (7, 484), (484, 185), (185, 749), (749, 512), (512, 551), (551, 167), (167, 393), (393, 44), (44, 219), (219, 642), (642, 720), (720, 626), (626, 564), (564, 400), (400, 577), (577, 94), (94, 431), (431, 42), (42, 172), (172, 747), (747, 384), (384, 73), (73, 423), (423, 523), (523, 524), (524, 355), (355, 245), (245, 518), (518, 544), (544, 288), (288, 352), (352, 651), (651, 305), (305, 532), (532, 712), (712, 190), (190, 184), (184, 241), (241, 236), (236, 125), (125, 126), (126, 0)])
+*** Step 4: ***
+Path0: 369411.801401
+Path0: [(0, 552), (552, 681), (681, 646), (646, 402), (402, 508), (508, 70), (70, 365), (365, 546), (546, 228), (228, 88), (88, 2), (2, 285), (285, 595), (595, 95), (95, 38), (38, 522), (522, 440), (440, 520), (520, 15), (15, 724), (724, 110), (110, 629), (629, 563), (563, 311), (311, 428), (428, 336), (336, 28), (28, 351), (351, 382), (382, 389), (389, 303), (303, 643), (643, 584), (584, 83), (83, 600), (600, 8), (8, 169), (169, 438), (438, 358), (358, 191), (191, 710), (710, 89), (89, 616), (616, 86), (86, 49), (49, 348), (348, 496), (496, 122), (122, 372), (372, 460), (460, 682), (682, 332), (332, 346), (346, 550), (550, 324), (324, 412), (412, 743), (743, 497), (497, 66), (66, 10), (10, 417), (417, 27), (27, 560), (560, 664), (664, 74), (74, 264), (264, 581), (581, 569), (569, 12), (12, 18), (18, 188), (188, 159), (159, 326), (326, 679), (679, 364), (364, 704), (704, 685), (685, 108), (108, 319), (319, 272), (272, 268), (268, 462), (462, 703), (703, 215), (215, 11), (11, 146), (146, 609), (609, 189), (189, 115), (115, 447), (447, 26), (26, 307), (307, 636), (636, 705), (705, 149), (149, 540), (540, 709), (709, 476), (476, 405), (405, 277), (277, 487), (487, 409), (409, 658), (658, 56), (56, 202), (202, 297), (297, 249), (249, 61), (61, 359), (359, 722), (722, 90), (90, 442), (442, 242), (242, 342), (342, 490), (490, 321), (321, 68), (68, 19), (19, 597), (597, 67), (67, 742), (742, 299), (299, 638), (638, 698), (698, 647), (647, 444), (444, 76), (76, 418), (418, 425), (425, 416), (416, 341), (341, 501), (501, 198), (198, 660), (660, 399), (399, 732), (732, 204), (204, 481), (481, 377), (377, 653), (653, 338), (338, 221), (221, 649), (649, 666), (666, 120), (120, 306), (306, 719), (719, 631), (631, 381), (381, 165), (165, 548), (548, 291), (291, 166), (166, 357), (357, 329), (329, 313), (313, 289), (289, 665), (665, 674), (674, 735), (735, 145), (145, 475), (475, 688), (688, 223), (223, 603), (603, 295), (295, 669), (669, 745), (745, 203), (203, 252), (252, 376), (376, 648), (648, 142), (142, 335), (335, 211), (211, 573), (573, 625), (625, 147), (147, 656), (656, 225), (225, 527), (527, 450), (450, 273), (273, 694), (694, 92), (92, 379), (379, 315), (315, 208), (208, 408), (408, 421), (421, 451), (451, 432), (432, 422), (422, 617), (617, 433), (433, 206), (206, 554), (554, 543), (543, 160), (160, 162), (162, 424), (424, 196), (196, 1), (1, 585), (585, 155), (155, 157), (157, 403), (403, 489), (489, 279), (279, 340), (340, 50), (50, 132), (132, 354), (354, 104), (104, 367), (367, 362), (362, 610), (610, 659), (659, 461), (461, 525), (525, 5), (5, 253), (253, 718), (718, 304), (304, 459), (459, 308), (308, 693), (693, 287), (287, 499), (499, 320), (320, 514), (514, 93), (93, 392), (392, 557), (557, 623), (623, 181), (181, 618), (618, 622), (622, 164), (164, 96), (96, 632), (632, 436), (436, 406), (406, 179), (179, 150), (150, 641), (641, 593), (593, 24), (24, 20), (20, 14), (14, 435), (435, 541), (541, 281), (281, 443), (443, 17), (17, 235), (235, 675), (675, 457), (457, 280), (280, 103), (103, 454), (454, 558), (558, 670), (670, 555), (555, 702), (702, 118), (118, 741), (741, 23), (23, 39), (39, 388), (388, 343), (343, 371), (371, 33), (33, 141), (141, 507), (507, 13), (13, 369), (369, 276), (276, 419), (419, 334), (334, 63), (63, 624), (624, 478), (478, 586), (586, 154), (154, 186), (186, 500), (500, 113), (113, 170), (170, 243), (243, 54), (54, 612), (612, 690), (690, 398), (398, 516), (516, 692), (692, 468), (468, 248), (248, 41), (41, 218), (218, 602), (602, 296), (296, 606), (606, 79), (79, 744), (744, 72), (72, 728), (728, 650), (650, 521), (521, 123), (123, 220), (220, 257), (257, 29), (29, 246), (246, 410), (410, 699), (699, 45), (45, 480), (480, 730), (730, 233), (233, 691), (691, 46), (46, 441), (441, 75), (75, 109), (109, 572), (572, 275), (275, 644), (644, 22), (22, 174), (174, 493), (493, 397), (397, 492), (492, 539), (539, 333), (333, 472), (472, 427), (427, 580), (580, 250), (250, 562), (562, 482), (482, 509), (509, 127), (127, 667), (667, 237), (237, 309), (309, 439), (439, 506), (506, 726), (726, 322), (322, 53), (53, 139), (139, 575), (575, 323), (323, 706), (706, 513), (513, 491), (491, 556), (556, 517), (517, 331), (331, 177), (177, 473), (473, 591), (591, 607), (607, 723), (723, 547), (547, 64), (64, 317), (317, 312), (312, 391), (391, 82), (82, 284), (284, 35), (35, 628), (628, 601), (601, 129), (129, 385), (385, 465), (465, 380), (380, 437), (437, 673), (673, 434), (434, 707), (707, 374), (374, 194), (194, 583), (583, 368), (368, 652), (652, 176), (176, 701), (701, 413), (413, 604), (604, 128), (128, 85), (85, 414), (414, 230), (230, 192), (192, 207), (207, 199), (199, 168), (168, 52), (52, 224), (224, 144), (144, 627), (627, 466), (466, 619), (619, 737), (737, 662), (662, 6), (6, 594), (594, 47), (47, 420), (420, 401), (401, 98), (98, 360), (360, 30), (30, 733), (733, 498), (498, 152), (152, 713), (713, 256), (256, 467), (467, 477), (477, 356), (356, 561), (561, 734), (734, 255), (255, 4), (4, 193), (193, 9), (9, 239), (239, 48), (48, 727), (727, 361), (361, 134), (134, 536), (536, 396), (396, 535), (535, 404), (404, 574), (574, 259), (259, 349), (349, 51), (51, 429), (429, 729), (729, 366), (366, 445), (445, 654), (654, 614), (614, 201), (201, 426), (426, 143), (143, 244), (244, 639), (639, 746), (746, 21), (21, 637), (637, 100), (100, 697), (697, 55), (55, 390), (390, 266), (266, 301), (301, 716), (716, 36), (36, 668), (668, 715), (715, 213), (213, 234), (234, 530), (530, 344), (344, 69), (69, 456), (456, 592), (592, 503), (503, 171), (171, 269), (269, 91), (91, 156), (156, 173), (173, 511), (511, 394), (394, 717), (717, 495), (495, 240), (240, 77), (77, 117), (117, 378), (378, 446), (446, 178), (178, 655), (655, 231), (231, 182), (182, 314), (314, 112), (112, 78), (78, 339), (339, 282), (282, 566), (566, 672), (672, 227), (227, 731), (731, 645), (645, 153), (153, 270), (270, 111), (111, 265), (265, 739), (739, 676), (676, 542), (542, 209), (209, 130), (130, 661), (661, 505), (505, 553), (553, 483), (483, 286), (286, 568), (568, 62), (62, 140), (140, 137), (137, 283), (283, 721), (721, 158), (158, 576), (576, 488), (488, 605), (605, 531), (531, 395), (395, 463), (463, 65), (65, 330), (330, 247), (247, 504), (504, 136), (136, 615), (615, 479), (479, 151), (151, 587), (587, 262), (262, 596), (596, 383), (383, 131), (131, 708), (708, 260), (260, 205), (205, 387), (387, 25), (25, 350), (350, 84), (84, 212), (212, 565), (565, 634), (634, 31), (31, 711), (711, 588), (588, 60), (60, 3), (3, 736), (736, 485), (485, 325), (325, 114), (114, 327), (327, 740), (740, 582), (582, 635), (635, 621), (621, 116), (116, 148), (148, 411), (411, 529), (529, 677), (677, 386), (386, 494), (494, 533), (533, 135), (135, 680), (680, 738), (738, 613), (613, 470), (470, 559), (559, 43), (43, 469), (469, 347), (347, 474), (474, 599), (599, 263), (263, 197), (197, 633), (633, 229), (229, 589), (589, 222), (222, 663), (663, 106), (106, 375), (375, 251), (251, 58), (58, 187), (187, 293), (293, 687), (687, 714), (714, 502), (502, 32), (32, 161), (161, 107), (107, 590), (590, 748), (748, 657), (657, 101), (101, 226), (226, 337), (337, 34), (34, 689), (689, 455), (455, 119), (119, 549), (549, 278), (278, 671), (671, 200), (200, 133), (133, 292), (292, 578), (578, 453), (453, 510), (510, 121), (121, 430), (430, 449), (449, 97), (97, 471), (471, 545), (545, 316), (316, 302), (302, 407), (407, 370), (370, 216), (216, 373), (373, 102), (102, 310), (310, 537), (537, 232), (232, 290), (290, 16), (16, 59), (59, 214), (214, 567), (567, 298), (298, 274), (274, 678), (678, 598), (598, 57), (57, 294), (294, 81), (81, 486), (486, 345), (345, 71), (71, 300), (300, 570), (570, 415), (415, 608), (608, 700), (700, 464), (464, 99), (99, 217), (217, 725), (725, 105), (105, 363), (363, 448), (448, 528), (528, 684), (684, 183), (183, 696), (696, 87), (87, 630), (630, 640), (640, 180), (180, 328), (328, 163), (163, 526), (526, 124), (124, 534), (534, 175), (175, 611), (611, 138), (138, 261), (261, 620), (620, 271), (271, 238), (238, 686), (686, 254), (254, 318), (318, 579), (579, 683), (683, 452), (452, 195), (195, 258), (258, 458), (458, 37), (37, 695), (695, 519), (519, 40), (40, 353), (353, 571), (571, 80), (80, 515), (515, 210), (210, 538), (538, 267), (267, 7), (7, 484), (484, 185), (185, 749), (749, 512), (512, 551), (551, 167), (167, 393), (393, 44), (44, 219), (219, 642), (642, 720), (720, 626), (626, 564), (564, 400), (400, 577), (577, 94), (94, 431), (431, 42), (42, 172), (172, 747), (747, 384), (384, 73), (73, 423), (423, 523), (523, 524), (524, 355), (355, 245), (245, 518), (518, 544), (544, 288), (288, 352), (352, 651), (651, 305), (305, 532), (532, 712), (712, 190), (190, 184), (184, 241), (241, 236), (236, 125), (125, 126), (126, 0)]
+Path1: 6546477.57628
+Path1: [(442, 677), (677, 320), (320, 27), (27, 61), (61, 711), (711, 156), (156, 463), (463, 652), (652, 59), (59, 377), (377, 103), (103, 257), (257, 169), (169, 150), (150, 170), (170, 510), (510, 556), (556, 355), (355, 736), (736, 425), (425, 126), (126, 518), (518, 517), (517, 302), (302, 577), (577, 8), (8, 710), (710, 675), (675, 46), (46, 385), (385, 342), (342, 291), (291, 335), (335, 499), (499, 471), (471, 715), (715, 485), (485, 104), (104, 112), (112, 436), (436, 700), (700, 602), (602, 520), (520, 643), (643, 332), (332, 615), (615, 516), (516, 496), (496, 603), (603, 368), (368, 562), (562, 58), (58, 256), (256, 194), (194, 51), (51, 118), (118, 456), (456, 417), (417, 466), (466, 681), (681, 91), (91, 605), (605, 232), (232, 451), (451, 359), (359, 287), (287, 430), (430, 434), (434, 180), (180, 634), (634, 633), (633, 420), (420, 297), (297, 672), (672, 549), (549, 69), (69, 482), (482, 248), (248, 508), (508, 223), (223, 655), (655, 406), (406, 464), (464, 470), (470, 202), (202, 229), (229, 199), (199, 210), (210, 220), (220, 293), (293, 276), (276, 117), (117, 393), (393, 663), (663, 192), (192, 7), (7, 344), (344, 141), (141, 395), (395, 469), (469, 724), (724, 539), (539, 298), (298, 279), (279, 397), (397, 555), (555, 534), (534, 740), (740, 197), (197, 188), (188, 617), (617, 82), (82, 487), (487, 140), (140, 243), (243, 152), (152, 405), (405, 612), (612, 325), (325, 53), (53, 651), (651, 407), (407, 579), (579, 746), (746, 329), (329, 130), (130, 723), (723, 446), (446, 277), (277, 145), (145, 678), (678, 161), (161, 392), (392, 450), (450, 351), (351, 0), (0, 49), (49, 139), (139, 288), (288, 568), (568, 530), (530, 491), (491, 186), (186, 468), (468, 454), (454, 657), (657, 307), (307, 623), (623, 154), (154, 137), (137, 448), (448, 521), (521, 490), (490, 467), (467, 187), (187, 544), (544, 345), (345, 78), (78, 584), (584, 309), (309, 39), (39, 503), (503, 182), (182, 679), (679, 583), (583, 670), (670, 177), (177, 155), (155, 370), (370, 127), (127, 115), (115, 507), (507, 608), (608, 645), (645, 251), (251, 717), (717, 573), (573, 1), (1, 566), (566, 609), (609, 67), (67, 349), (349, 734), (734, 233), (233, 476), (476, 16), (16, 512), (512, 690), (690, 122), (122, 416), (416, 356), (356, 289), (289, 570), (570, 208), (208, 433), (433, 472), (472, 399), (399, 600), (600, 479), (479, 222), (222, 685), (685, 745), (745, 692), (692, 107), (107, 741), (741, 214), (214, 26), (26, 224), (224, 461), (461, 110), (110, 239), (239, 731), (731, 560), (560, 732), (732, 423), (423, 674), (674, 272), (272, 418), (418, 509), (509, 551), (551, 90), (90, 215), (215, 696), (696, 236), (236, 263), (263, 622), (622, 409), (409, 301), (301, 742), (742, 85), (85, 498), (498, 303), (303, 235), (235, 226), (226, 99), (99, 728), (728, 25), (25, 641), (641, 683), (683, 21), (21, 659), (659, 333), (333, 278), (278, 488), (488, 348), (348, 164), (164, 274), (274, 601), (601, 444), (444, 501), (501, 557), (557, 554), (554, 666), (666, 101), (101, 14), (14, 484), (484, 131), (131, 739), (739, 66), (66, 24), (24, 596), (596, 689), (689, 553), (553, 504), (504, 92), (92, 6), (6, 225), (225, 238), (238, 87), (87, 525), (525, 497), (497, 373), (373, 347), (347, 737), (737, 598), (598, 473), (473, 262), (262, 253), (253, 207), (207, 408), (408, 532), (532, 12), (12, 658), (658, 478), (478, 19), (19, 426), (426, 299), (299, 121), (121, 321), (321, 65), (65, 432), (432, 511), (511, 515), (515, 259), (259, 294), (294, 632), (632, 729), (729, 457), (457, 665), (665, 30), (30, 604), (604, 86), (86, 111), (111, 11), (11, 319), (319, 296), (296, 167), (167, 96), (96, 443), (443, 574), (574, 616), (616, 217), (217, 735), (735, 730), (730, 142), (142, 673), (673, 147), (147, 15), (15, 57), (57, 260), (260, 166), (166, 125), (125, 384), (384, 749), (749, 231), (231, 439), (439, 528), (528, 581), (581, 428), (428, 460), (460, 438), (438, 17), (17, 564), (564, 389), (389, 381), (381, 244), (244, 720), (720, 686), (686, 158), (158, 328), (328, 462), (462, 613), (613, 105), (105, 340), (340, 527), (527, 55), (55, 35), (35, 458), (458, 13), (13, 713), (713, 184), (184, 316), (316, 195), (195, 500), (500, 157), (157, 372), (372, 726), (726, 113), (113, 495), (495, 590), (590, 211), (211, 589), (589, 76), (76, 171), (171, 414), (414, 42), (42, 119), (119, 314), (314, 123), (123, 163), (163, 401), (401, 614), (614, 334), (334, 73), (73, 522), (522, 71), (71, 721), (721, 148), (148, 213), (213, 474), (474, 250), (250, 168), (168, 134), (134, 285), (285, 190), (190, 747), (747, 400), (400, 748), (748, 704), (704, 255), (255, 109), (109, 313), (313, 362), (362, 514), (514, 538), (538, 352), (352, 531), (531, 588), (588, 337), (337, 691), (691, 234), (234, 323), (323, 714), (714, 379), (379, 353), (353, 290), (290, 133), (133, 183), (183, 153), (153, 136), (136, 75), (75, 669), (669, 693), (693, 284), (284, 305), (305, 34), (34, 647), (647, 341), (341, 502), (502, 378), (378, 519), (519, 267), (267, 270), (270, 206), (206, 494), (494, 149), (149, 36), (36, 505), (505, 369), (369, 718), (718, 151), (151, 310), (310, 481), (481, 172), (172, 404), (404, 179), (179, 37), (37, 688), (688, 9), (9, 492), (492, 212), (212, 44), (44, 315), (315, 639), (639, 706), (706, 580), (580, 374), (374, 396), (396, 382), (382, 273), (273, 174), (174, 536), (536, 5), (5, 189), (189, 308), (308, 475), (475, 435), (435, 413), (413, 419), (419, 705), (705, 327), (327, 441), (441, 357), (357, 640), (640, 178), (178, 415), (415, 599), (599, 245), (245, 219), (219, 33), (33, 547), (547, 587), (587, 135), (135, 176), (176, 165), (165, 216), (216, 412), (412, 572), (572, 227), (227, 32), (32, 483), (483, 268), (268, 459), (459, 116), (116, 699), (699, 571), (571, 427), (427, 524), (524, 629), (629, 56), (56, 671), (671, 493), (493, 668), (668, 592), (592, 144), (144, 98), (98, 203), (203, 31), (31, 29), (29, 743), (743, 540), (540, 237), (237, 644), (644, 621), (621, 390), (390, 725), (725, 74), (74, 43), (43, 265), (265, 561), (561, 391), (391, 667), (667, 230), (230, 611), (611, 744), (744, 3), (3, 209), (209, 698), (698, 97), (97, 4), (4, 361), (361, 635), (635, 523), (523, 606), (606, 649), (649, 54), (54, 79), (79, 594), (594, 593), (593, 95), (95, 191), (191, 682), (682, 575), (575, 424), (424, 625), (625, 258), (258, 440), (440, 60), (60, 429), (429, 221), (221, 350), (350, 162), (162, 543), (543, 545), (545, 618), (618, 676), (676, 375), (375, 22), (22, 637), (637, 280), (280, 506), (506, 582), (582, 585), (585, 712), (712, 84), (84, 709), (709, 626), (626, 83), (83, 535), (535, 360), (360, 240), (240, 569), (569, 138), (138, 727), (727, 542), (542, 283), (283, 266), (266, 552), (552, 41), (41, 367), (367, 68), (68, 567), (567, 559), (559, 716), (716, 102), (102, 198), (198, 638), (638, 489), (489, 306), (306, 304), (304, 159), (159, 383), (383, 2), (2, 70), (70, 437), (437, 64), (64, 630), (630, 722), (722, 269), (269, 114), (114, 565), (565, 354), (354, 619), (619, 318), (318, 597), (597, 88), (88, 346), (346, 330), (330, 94), (94, 546), (546, 388), (388, 128), (128, 366), (366, 336), (336, 624), (624, 403), (403, 81), (81, 480), (480, 28), (28, 175), (175, 282), (282, 247), (247, 661), (661, 578), (578, 656), (656, 100), (100, 738), (738, 533), (533, 646), (646, 662), (662, 733), (733, 204), (204, 410), (410, 719), (719, 627), (627, 550), (550, 411), (411, 193), (193, 455), (455, 295), (295, 50), (50, 228), (228, 317), (317, 680), (680, 52), (52, 275), (275, 548), (548, 453), (453, 264), (264, 701), (701, 271), (271, 537), (537, 312), (312, 292), (292, 591), (591, 620), (620, 660), (660, 160), (160, 338), (338, 576), (576, 529), (529, 249), (249, 697), (697, 648), (648, 200), (200, 80), (80, 18), (18, 636), (636, 324), (324, 358), (358, 376), (376, 447), (447, 558), (558, 702), (702, 363), (363, 77), (77, 300), (300, 326), (326, 343), (343, 402), (402, 120), (120, 707), (707, 181), (181, 628), (628, 241), (241, 610), (610, 513), (513, 322), (322, 422), (422, 62), (62, 254), (254, 311), (311, 563), (563, 607), (607, 595), (595, 394), (394, 196), (196, 687), (687, 642), (642, 205), (205, 449), (449, 684), (684, 371), (371, 40), (40, 89), (89, 45), (45, 246), (246, 72), (72, 653), (653, 421), (421, 10), (10, 23), (23, 281), (281, 201), (201, 242), (242, 132), (132, 20), (20, 465), (465, 654), (654, 286), (286, 387), (387, 364), (364, 398), (398, 124), (124, 146), (146, 486), (486, 173), (173, 695), (695, 365), (365, 541), (541, 631), (631, 452), (452, 650), (650, 48), (48, 218), (218, 477), (477, 252), (252, 108), (108, 526), (526, 331), (331, 386), (386, 63), (63, 703), (703, 339), (339, 431), (431, 143), (143, 380), (380, 694), (694, 129), (129, 708), (708, 664), (664, 261), (261, 586), (586, 47), (47, 93), (93, 106), (106, 445), (445, 38), (38, 185), (185, 442)]
+*** Step 5: ***
+Results:
+Path0: 369411.801401 / 369411.801401
+Path1: 6546477.57628 / 6546477.57628

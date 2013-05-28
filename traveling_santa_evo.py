@@ -23,6 +23,11 @@ class EVO(object):
         self.points = []
         for i, p in enumerate(data):
             self.points.insert(i, (np.int_(p[1]) ,np.int_(p[2]) ) )
+
+        self.weights = [[0 for _ in range(len(self.points))] for _ in range(len(self.points))]
+        for i, p in enumerate(self.points):
+            for j, q in enumerate(self.points):
+                self.weights[i][j] = math.sqrt((p[0] - q[0])**2 + (p[1] - q[1])**2)
         
 
 
@@ -37,51 +42,44 @@ class EVO(object):
         for inx0, edge0 in enumerate(route0):
             for inx1, edge1 in enumerate(route1):
                 if( (edge1[0] == edge0[0] and edge1[1] == edge0[1]) or (edge1[1] == edge0[0] and edge1[0] == edge0[1]) ):
-                    #print('duplicate ({0}) {1} and ({2}) {3}'.format(inx0, edge0, inx1, edge1))
                     duplicates += 1
         return duplicates
 
     def solve(self, display=True):
         prng = Random()
         prng.seed(time()) 
-    
-        self.weights = [[0 for _ in range(len(self.points))] for _ in range(len(self.points))]
-        for i, p in enumerate(self.points):
-            for j, q in enumerate(self.points):
-                self.weights[i][j] = math.sqrt((p[0] - q[0])**2 + (p[1] - q[1])**2)
-                  
+                      
         problem = TSP(self.weights,self.route)
-        ac = inspyred.swarm.ACS(prng, problem.components)
-        ac.terminator = inspyred.ec.terminators.generation_termination
-        final_pop = ac.evolve(generator=problem.constructor, 
+
+        ea = ec.EvolutionaryComputation(prng)
+        ea.selector = ec.selectors.tournament_selection
+        ea.variator = [ec.variators.partially_matched_crossover, 
+                       ec.variators.inversion_mutation]
+        ea.replacer = ec.replacers.generational_replacement
+        ea.terminator = ec.terminators.generation_termination
+        final_pop = ea.evolve(generator=problem.generator, 
                               evaluator=problem.evaluator, 
                               bounder=problem.bounder,
                               maximize=problem.maximize, 
-                              pop_size=10, 
-                              max_generations=5)
+                              pop_size=300, 
+                              max_generations=60,
+                              tournament_size=10,
+                              num_selected=100,
+                              num_elites=5)
 
-                              
-        best = max(ac.archive)
+        best = max(ea.population)
         self.tour = []
         for i, p in enumerate(best.candidate):
-            self.tour.insert(i, p.element )
-        self.tour.append((p.element[1],self.tour[0][0]) )
-
-
-
+            self.tour.insert(i, (best.candidate[i-1] , p) )
 
         print('Best Solution:')
         total = 0
-        for c in best.candidate:
-            total += self.weights[c.element[0]][c.element[1]]
-        last = (best.candidate[-1].element[1], best.candidate[0].element[0])
-        total += self.weights[last[0]][last[1]]
+        for c in self.tour:
+            total += self.weights[c[0]][c[1]]
 
-
-        print('Fitness: {0}'.format(1/best.fitness))
         print('Distance: {0}'.format(total))
 
         print('Tour:  ' , self.tour)
         print('Route: ' , self.route )
         
-        return ac
+        return ea

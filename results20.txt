@@ -1,0 +1,59 @@
+*** Step 1: ***
+*** Step 2: ***
+triangulating ...
+build graph
+#edges: 49 #nodes: 20
+computing MST
+took 0.0
+computing delaunay of odd_deg_nodes
+#edges: 33 #nodes: 14 14
+computing minimum matching
+took 0.0159997940063
+#edges: 7 #nodes: 14
+find euler tour
+took 0.0
+euler path:  [(0, 7), (7, 16), (16, 4), (4, 9), (9, 6), (6, 3), (3, 18), (18, 11), (11, 19), (19, 1), (1, 5), (5, 13), (13, 5), (5, 14), (14, 17), (17, 14), (14, 18), (18, 12), (12, 10), (10, 8), (8, 2), (2, 15), (15, 0)]
+#edges: 23 #nodes: 20
+start shortcutting
+  --  start shortcutting visit  1
+5 visited! 13
+ looking backwards:  1 13  cutting  5
+14 visited! 17
+ looking backwards:  5 17  cutting  14
+18 visited! 14
+its a crossing
+connected_visited_neighbors: 3 11
+[]
+#edges: 20 #crossings: 0
+  --  start shortcutting visit  2
+[]
+#edges: 20 #crossings: 0
+  --  start shortcutting visit  3
+[]
+#edges: 20 #crossings: 0
+  --  start shortcutting visit  4
+[]
+#edges: 20 #crossings: 0
+  --  start shortcutting visit  5
+[]
+#edges: 20 #crossings: 0
+took 0.0
+#edges: 20 path len: 72940.5694094
+*** Step 3: ***
+Best Solution:
+Distance: 182799.15135
+('Tour:  ', [(3, 0), (0, 8), (8, 16), (16, 2), (2, 12), (12, 19), (19, 14), (14, 1), (1, 9), (9, 17), (17, 13), (13, 15), (15, 5), (5, 6), (6, 18), (18, 10), (10, 4), (4, 11), (11, 7), (7, 3)])
+('Route: ', [(0, 7), (7, 16), (16, 4), (4, 9), (9, 6), (6, 3), (3, 11), (11, 19), (19, 1), (1, 13), (13, 5), (5, 17), (17, 14), (14, 18), (18, 12), (12, 10), (10, 8), (8, 2), (2, 15), (15, 0)])
+*** Step 4: ***
+0 remaining unsolved duplicates
+Path0: 72940.5694094
+Path0: [(0, 7), (7, 16), (16, 4), (4, 9), (9, 6), (6, 3), (3, 11), (11, 19), (19, 1), (1, 13), (13, 5), (5, 17), (17, 14), (14, 18), (18, 12), (12, 10), (10, 8), (8, 2), (2, 15), (15, 0)]
+Path1: 182799.15135
+Path1: [(3, 0), (0, 8), (8, 16), (16, 2), (2, 12), (12, 19), (19, 14), (14, 1), (1, 9), (9, 17), (17, 13), (13, 15), (15, 5), (5, 6), (6, 18), (18, 10), (10, 4), (4, 11), (11, 7), (7, 3)]
+*** Step 5: ***
+Results:
+Path0: 72940.5694094 / 72940.5694094
+Path1: 182799.15135 / 182799.15135
+shortes possible Path 121866.1009
+path0 0.598530427007*
+path1 1.5*
