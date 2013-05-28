@@ -61,11 +61,11 @@ class EVO(object):
                               evaluator=problem.evaluator, 
                               bounder=problem.bounder,
                               maximize=problem.maximize, 
-                              pop_size=200, 
+                              pop_size=300, 
                               max_generations=60,
                               tournament_size=10,
                               num_selected=100,
-                              num_elites=1)
+                              num_elites=5)
 
         best = max(ea.population)
         self.tour = []

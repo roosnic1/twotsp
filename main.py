@@ -38,7 +38,7 @@ def subset_data(data, size):
 if __name__ == '__main__':
     print "*** Step 1: ***"
     data = read_data_file('santa_cities.csv')  # id, x, y
-    data = subset_data(data, 1600)
+    data = subset_data(data, 180)
 
     print "*** Step 2: ***"
     tsp = TSP(data)
@@ -76,6 +76,10 @@ if __name__ == '__main__':
     print "Results:"
     print('Path0: {0} / {1}'.format(evo.calc_path_lenght(me.route0), route0_lenght))
     print('Path1: {0} / {1}'.format(evo.calc_path_lenght(me.route1), route1_lenght))
+    print('shortes possible Path {0}'.format(route1_lenght/1.5))
+    print('path0 {0}*'.format(evo.calc_path_lenght(me.route0)/(route0_lenght/1.5)) )
+    print('path1 {0}*'.format(evo.calc_path_lenght(me.route1)/(route0_lenght/1.5)) )
+    print('path0-path1 {0}*'.format(evo.calc_path_lenght(me.route1)/evo.calc_path_lenght(me.route0)) )
 
 
 

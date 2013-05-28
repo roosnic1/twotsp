@@ -70,8 +70,11 @@ class ME(object):
             else:
                 edgehash = str(edge[1])+str(edge[0])
 
-            if self.hashmap.get(edgehash)[1] == False:
-                del self.hashmap[edgehash]
+            try:
+                if self.hashmap.get(edgehash)[1] == False:
+                    del self.hashmap[edgehash]
+            except Exception:
+                pass
 
 
     def solve_duplicate(self,route,inx):
@@ -104,10 +107,13 @@ class ME(object):
         self.hashmap = dict()
         self.build_hasmap()
         self.nearespoints = dict()
-        
-        while(len(self.hashmap)>len(self.route0)*0.1):
+        self.nearespointsOld = dict({'00':False})
+        self.hashmapOld = dict({'old':(False,False)})
 
-            self.build_hasmap()        
+        
+        while(len(self.hashmap)> 10 and self.hashmapOld != self.hashmap):
+
+                   
             self.nearespoints = dict()
 
             if self.calc_path_lenght(self.route0) < self.calc_path_lenght(self.route1):
@@ -119,8 +125,45 @@ class ME(object):
                 
                 for mapentry in self.hashmap:    
                     print('solving {0}'.format(mapentry))
-                    self.route1 = self.solve_duplicate(self.route1,self.hashmap.get(mapentry)[0])
-        
+                    self.route1 = self.solve_duplicate(self.route1,self.hashmap.get(mapentry)[1])
+
+            #raw_input("press enter")
+            print "-----------------------------------------------------"
+            self.hashmapOld = self.hashmap
+            self.build_hasmap()
+
+        print('{0} remaining unsolved duplicates'.format(len(self.hashmap)))
+        inxold = False
+        while(len(self.hashmap)> 0):
+            
+            if(self.calc_path_lenght(self.route0)<self.calc_path_lenght(self.route1)):
+                for mapentry in self.hashmap:                     
+                    inx = self.hashmap.get(mapentry)[0]
+                    print('manipulate route0 on {0}'.format(inx) )
+                    print self.route0
+                    self.route0.append( (self.route0[-1][1],self.route0[inx][0]) )
+                    self.route0[inx-1] = (self.route0[inx-1][0],self.route0[inx][1])
+                    self.route0.remove(self.route0[inx])   
+            else:
+                for mapentry in self.hashmap:
+                    inx = self.hashmap.get(mapentry)[1] 
+                    print('manipulate route1 on {0}'.format(inx) )
+                    print self.route1
+                    self.route1.append( (self.route1[-1][1],self.route1[inx][0]) )
+                    self.route1[inx-1] = (self.route1[inx-1][0],self.route1[inx][1])
+                    self.route1.remove(self.route1[inx]) 
+
+            if inx == inxold and (inx == len(self.route0) or inx == len(self.route0)-1 or inx == len(self.route0)-2):
+                self.hashmap=dict()
+            else:
+                self.build_hasmap()
+
+            inxold = inx
+            self.build_hasmap()
+            print "-----------------------------------------------------"
+            print('{0} remaining unsolved duplicates'.format(len(self.hashmap)))
+
+
         
 
 
