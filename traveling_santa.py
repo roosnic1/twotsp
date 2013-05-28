@@ -89,12 +89,7 @@ class TSP(object):
         for i in mates.keys():
             m.add_edge(i,mates[i], weight=self.g.dist_func(i,mates[i]))
         print '#edges:', len(m.edges()), '#nodes:', len(m.nodes())
-<<<<<<< HEAD
         self.min_matching = m
-=======
-        self.plot_edges(m.edges(),'r-',2)
-        self.m = m
->>>>>>> featureEvoAlg
 
     def find_euler_tour(self, nx_euler=False):
         h = nx.MultiGraph()
@@ -338,14 +333,10 @@ class TSP(object):
                 plt.annotate("%s"%(city), (cx, cy), xytext=(8,8), textcoords='offset points')
         if showMST:
             self.plot_edges(self.mst.edges(), 'g-', 2, 2)
-<<<<<<< HEAD
         self.highlight_nodes(self.odd_deg_nodes)
         self.plot_edges(self.min_matching.edges(),'r-',2)  # min-weight-matching
         self.plot_edges(self.euler_path,'c--',2)
-        #self.plot_path(self.euler_path, 'c')
-=======
-        #self.plot_edges(self.h_tour,'m-',5) 
->>>>>>> featureEvoAlg
+
         if hasattr(self, "h_tour"):
             self.plot_path(self.h_tour)
         plt.plot(self.x, self.y, '.', ms=3)
