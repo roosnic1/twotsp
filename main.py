@@ -9,6 +9,8 @@ from traveling_santa_me import ME as ME
 from traveling_santa_nico import NICO as NICO
 
 import matplotlib.pyplot as plt
+import cPickle as pickle
+import time
 
 
 def read_data_file(file):
@@ -39,12 +41,37 @@ def subset_data(data, size):
     return np.array(samples)
 
 if __name__ == '__main__':
-    print "*** Step 1: ***"
-    data = read_data_file('santa_cities.csv')  # id, x, y
+    print "*** Step 1: *** \t\t\t ***"
 
-    data = subset_data(data, 150)
 
+    anzpoints = 5000
+    readdump = False
+
+
+    if not readdump:
+        t1 = time.time()
+
+    # read dump
+    if readdump:
+        print '--- Read stored dump --- \t\t\t ---'
+        dump = pickle.load(open(str("results/route"+str(anzpoints)+".dump"),'rb'))
+        route0 = dump[0]
+        route1 = dump[1]
+        data = dump[2]
+        route0_lenght = dump[3]
+        route1_lenght = dump[4]
+        exectime = dump[5]
+
+    if not readdump:
+        print "--- Reading Data --- \t\t\t ---"
+        data = read_data_file('santa_cities.csv')  # id, x, y
+        print "--- Sample Data --- \t\t\t ---"
+        data = subset_data(data, anzpoints)
+
+    
+    
     #Plot Points
+    print "--- Initialize Plot --- \t\t\t ---"
     y = int(data[0][1])
     z = int(data[0][2])
     u = [int(data[0][1])]
@@ -58,74 +85,89 @@ if __name__ == '__main__':
         if int(data[x][2]) > z:
             z = int(data[x][2])
 
-
-    #print y,z
-    #print u,v
-
     plt.plot(u,v,'bo')
     plt.axis([0,y,0,z])
-    #plt.show();
 
+    if not readdump:
+        print "*** Step 2: *** \t\t\t ***"
+        print "--- Initialize Cristophiedes Heuristik --- \t\t\t ---"
+        tsp = TSP(data)
+        print "--- Solving Cristophiedes Heuristik --- \t\t\t ---"
+        tsp.solve()
+        route0 = tsp.h_tour
 
-    print "*** Step 2: ***"
-    tsp = TSP(data)
-    tsp.solve()
-    #tsp.plot()
+    print "*** Step 3: *** \t\t\t ***"
+    if not readdump:
+        # -- Ant Colony Optimation
+        #acs = ACS(data,route0)
+        #acs.solve()
+        #route1 = acs.tour
 
-    print "*** Step 3: ***"
-    route0 = tsp.h_tour
+        # -- Random Evo Path Generation
+        # !!! evo must be initialized - not solved
+        evo = EVO(data,route0)
+        #evo.solve()
+        #route1 = evo.tour
 
+        # -- Using same paths  
+        #route1 = list(route0)
 
+        # -- Testing Paths
+        #route0 = [(0,1),(1,2),(2,3),(3,4),(4,5),(5,6),(6,7),(7,8),(8,9),(9,10),(10,0)]
+        #route0 = [(0,1),(1,2),(2,3),(3,4),(4,5),(5,6),(6,7),(7,8),(8,0)]
+
+        # -- NJM Algo
+        print "--- Initialize NJM-Algo --- \t\t\t ---"
+        nico = NICO(route0)
+        print "--- Solving NJM-Alog --- \t\t\t ---"
+        route1 = nico.solve()
+
+        # Resolving duplicates
+        #me = ME(evo.weights,route0, route1)
+        #me.solve()
+        #route0 = me.route0
+        #route1 = me.route1
     
-    #acs = ACS(data,route0)
-    #evo = EVO(data,route0)
-    #profile.run("evo.solve()")
-    #evo.solve()
-    #acs.solve()
 
+    print "*** Step 4: *** \t\t\t ***"
+   
+    if not readdump:
+        print "--- Calc path length --- \t\t\t ---"
+        route0_lenght = evo.calc_path_lenght(route0)
+        route1_lenght = evo.calc_path_lenght(route1)
+    
+    if not readdump:
+        # calculate exectime
+        t2 = time.time()
+        exectime = (t2-t1)
 
-    #route1 = evo.tour
-    #route1 = acs.tour
-    #route1 = list(route0)
-    #route0 = [(0,1),(1,2),(2,3),(3,4),(4,5),(5,6),(6,7),(7,8),(8,9),(9,10),(10,0)]
-    #route0 = [(0,1),(1,2),(2,3),(3,4),(4,5),(5,6),(6,7),(7,8),(8,0)]
-    nico = NICO(route0)
-    route1 = nico.solve()
+        print "--- Saving dump --- \t\t\t ---"
+        dump = (route0,route1,data,route0_lenght,route1_lenght,exectime)
+        pickle.dump(dump,open(str("results/route"+str(len(route0))+".dump"),'wb'))
+    
 
-    #print route0
-    #print route1
+    print "--- Print Stats ------------------------------------------"
+    print ""
+    print('{0} Points in {1}s'.format(len(route0), exectime))
+    print('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+    print('Path \t Length \t longer then - \t factor ')
+    print('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+    print('- \t {0}'.format( route0_lenght/1.5  ))
+    print('0 \t {0} \t {1}'.format( route0_lenght,  route0_lenght/(route0_lenght/1.5) ))
+    print('1 \t {0} \t {1} \t {2}'.format( route1_lenght,  route1_lenght/(route0_lenght/1.5), route1_lenght/route0_lenght ))
+    print('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+    print ""
 
+    #print('Path0: {0} / {1}'.format(evo.calc_path_lenght(me.route0), route0_lenght))
+    #print('Path1: {0} / {1}'.format(evo.calc_path_lenght(me.route1), route1_lenght))
+    #print('shortes possible Path {0}'.format(route1_lenght/1.5))
+    #print('path0 {0}*'.format(evo.calc_path_lenght(me.route0)/(route0_lenght/1.5)) )
+    #print('path1 {0}*'.format(evo.calc_path_lenght(me.route1)/(route0_lenght/1.5)) )
+    #print('path0-path1 {0}*'.format(evo.calc_path_lenght(me.route1)/evo.calc_path_lenght(me.route0)) )
+
+    print "--- Print Gui --- \t\t\t ---"
 
     q = []
-    
-    route0_lenght = evo.calc_path_lenght(route0)
-    route1_lenght = evo.calc_path_lenght(route1)
-
-    print "*** Step 4: ***"
-    
-    #me = ME(evo.weights,route0, route1)
-    #me.solve()
- 
-
-    print('Path0: {0}'.format(evo.calc_path_lenght(me.route0)))
-    print('Path0: {0}'.format(me.route0))
-    print('Path1: {0}'.format(evo.calc_path_lenght(me.route1)))
-    print('Path1: {0}'.format(me.route1))
-
-    print('*** Step 5: ***')
-    print "Results:"
-    print('Path0: {0} / {1}'.format(evo.calc_path_lenght(me.route0), route0_lenght))
-    print('Path1: {0} / {1}'.format(evo.calc_path_lenght(me.route1), route1_lenght))
-    print('shortes possible Path {0}'.format(route1_lenght/1.5))
-    print('path0 {0}*'.format(evo.calc_path_lenght(me.route0)/(route0_lenght/1.5)) )
-    print('path1 {0}*'.format(evo.calc_path_lenght(me.route1)/(route0_lenght/1.5)) )
-    print('path0-path1 {0}*'.format(evo.calc_path_lenght(me.route1)/evo.calc_path_lenght(me.route0)) )
-
-
-    route0 = me.route0
-    route1 = me.route1
-
-
     w = []
     for x in range(0,len(route0)):
         data[int(route0[x][0])][1]
@@ -148,13 +190,13 @@ if __name__ == '__main__':
     z = np.array(w)
     i = np.array(a)
     k = np.array(s)
-    print 'Data:'
-    print data
+    #print 'Data:'
+    #print data
 
-    print 'Route0:'
-    print route0
-    print q
-    print t
+    #print 'Route0:'
+    #print route0
+    #print q
+    #print t
     #t = np.arange(0., 5., 0.2)
     #print t
     plt.plot(t[0],z[0],'rs')

@@ -18,7 +18,6 @@ class NICO(object):
 			pt0 = pt1
 
 			if counter < 2:
-				print counter
 				counter += 1
 				inx -= 2
 				pt1 = self.route0[inx][0]
@@ -68,5 +67,5 @@ class NICO(object):
 			self.route1.append( (pt0,pt1) )
 
 
-		print self.route1
+		#print self.route1
 		return self.route1

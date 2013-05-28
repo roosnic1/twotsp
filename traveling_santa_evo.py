@@ -72,14 +72,14 @@ class EVO(object):
         for i, p in enumerate(best.candidate):
             self.tour.insert(i, (best.candidate[i-1] , p) )
 
-        print('Best Solution:')
+        #print('Best Solution:')
         total = 0
         for c in self.tour:
             total += self.weights[c[0]][c[1]]
 
-        print('Distance: {0}'.format(total))
+        #print('Distance: {0}'.format(total))
 
-        print('Tour:  ' , self.tour)
-        print('Route: ' , self.route )
+        #print('Tour:  ' , self.tour)
+        #print('Route: ' , self.route )
         
         return ea
