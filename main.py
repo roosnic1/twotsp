@@ -41,7 +41,6 @@ if __name__ == '__main__':
     print "*** Step 1: ***"
     data = read_data_file('santa_cities.csv')  # id, x, y
 
-
     data = subset_data(data, 15)
 
     #Plot Points
@@ -64,7 +63,7 @@ if __name__ == '__main__':
 
     plt.plot(u,v,'bo')
     plt.axis([0,y,0,z])
-    plt.show();
+    #plt.show();
 
 
     print "*** Step 2: ***"
@@ -74,16 +73,9 @@ if __name__ == '__main__':
 
     print "*** Step 3: ***"
     route0 = tsp.h_tour
-    q = []
-    w = []
-    for x in range(0,len(route0)):
-        q.append(int(route0[x][0]))
-        w.append(int(route0[x][0]))
-
-    plt.plot(q,'g-')
-    plt.show()
 
 
+    
     #acs = ACS(data,route0)
     evo = EVO(data,route0)
     #profile.run("evo.solve()")
@@ -94,6 +86,45 @@ if __name__ == '__main__':
     route1 = evo.tour
     #route1 = acs.tour
     #route1 = list(route0)
+
+
+    q = []
+    w = []
+    for x in range(0,len(route0)):
+        data[int(route0[x][0])][1]
+        q.append(data[int(route0[x][0])][1])
+        w.append(data[int(route0[x][0])][2])
+        q.append(data[int(route0[x][1])][1])
+        w.append(data[int(route0[x][1])][2])
+
+    a = []
+    s = []
+    for x in range(0,len(route1)):
+        data[int(route0[x][0])][1]
+        a.append(data[int(route1[x][0])][1])
+        s.append(data[int(route1[x][0])][2])
+        a.append(data[int(route1[x][1])][1])
+        s.append(data[int(route1[x][1])][2])
+
+
+    t = np.array(q)
+    z = np.array(w)
+    i = np.array(a)
+    k = np.array(s)
+    print 'Data:'
+    print data
+
+    print 'Route0:'
+    print route0
+    print q
+    print t
+    #t = np.arange(0., 5., 0.2)
+    #print t
+    plt.plot(t[0],z[0],'rs')
+    plt.plot(t,z,'g--')
+    plt.plot(a[0],s[0],'ys')
+    plt.plot(a,s,'m--')
+    plt.show()
 
     route0_lenght = evo.calc_path_lenght(route0)
     route1_lenght = evo.calc_path_lenght(route1)

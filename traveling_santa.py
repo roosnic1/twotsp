@@ -108,7 +108,7 @@ class TSP(object):
         print "took %s" % (t2-t1) 
         print "euler path: ", self.euler_path
         print '#edges:', len(self.euler_path), '#nodes:', len(h.nodes())
-        self.plot_edges(self.euler_path,'c--',2)
+        #self.plot_edges(self.euler_path,'c--',2)
         self.h = h
 
 
