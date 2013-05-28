@@ -6,7 +6,8 @@ class ME(object):
         self.route1 = route1
         self.weights = weights
     
-    def getNearesPoint(self,point):
+    def getNearesPoint(self,points,nearespoints):
+            point = points[0]
             upper = max(self.weights[point])
             lower = upper
 
@@ -16,9 +17,13 @@ class ME(object):
             if(point<len(self.weights)-2):
                 upper = min( self.weights[ point ] [ point+1 : -1 ] )
 
+            tmp=(False,max(self.weights[point]))
             for p in enumerate(self.weights[point]):
-                if p[1] == min(lower,upper):
-                    return p[0]
+                if p[1] <= tmp[1] and p[0] not in nearespoints and p[0] != point and p[0] != points[1]:
+                    tmp = p
+                    
+            print('nearest point {0} is not {1}'.format(tmp[0],nearespoints))
+            return tmp[0]
 
     def findDuplicates(self):
         print "# Duplicates: #"
@@ -67,24 +72,54 @@ class ME(object):
 
             if self.hashmap.get(edgehash)[1] == False:
                 del self.hashmap[edgehash]
-    def solve_duplicate(self,route,inx):
 
+
+    def solve_duplicate(self,route,inx):
+        newpt = self.getNearesPoint(route[inx],self.nearespoints)
+
+        self.nearespoints.update({newpt:True})
+        self.nearespoints.update({route[inx][0]:True})
+        self.nearespoints.update({route[inx][1]:True})
+        if not newpt:
+            return route
+        oldpt = route[inx][1]
+
+        route[inx] = (route[inx][0],route[inx][1])
+        route.insert(inx+1,(newpt,oldpt))
+
+        manipulated1 = False
+        for inx1, edge in enumerate(route):
+            if manipulated1 == False and edge[0] == newpt and  inx1 != inx+1:
+                route[inx1-1] = (route[inx1-1][0],route[inx1][1])
+                route.remove(route[inx1])
+                manipulated1 = True
         
 
 
         return route
 
+
+
     def solve(self):
         self.hashmap = dict()
+        self.build_hasmap()
+        self.nearespoints = dict()
+        
+        while(len(self.hashmap)>len(self.route0)*0.1):
 
-        while(len(self.hashmap)>0):
-            self.build_hasmap()
+            self.build_hasmap()        
+            self.nearespoints = dict()
 
-            for mapentry in self.hashmap:
-                if self.calc_path_lenght(self.route0) > elf.calc_path_lenght(self.route1):
-                    self.route1 = self.solve_duplicate(self.route1,self.hashmap.get(mapentry)[1])
-                else:
+            if self.calc_path_lenght(self.route0) < self.calc_path_lenght(self.route1):
+                
+                for mapentry in self.hashmap:    
+                    print('solving {0}'.format(mapentry))
                     self.route0 = self.solve_duplicate(self.route0,self.hashmap.get(mapentry)[0])
+            else:
+                
+                for mapentry in self.hashmap:    
+                    print('solving {0}'.format(mapentry))
+                    self.route1 = self.solve_duplicate(self.route1,self.hashmap.get(mapentry)[0])
         
         
 

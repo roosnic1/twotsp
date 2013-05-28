@@ -38,7 +38,7 @@ def subset_data(data, size):
 if __name__ == '__main__':
     print "*** Step 1: ***"
     data = read_data_file('santa_cities.csv')  # id, x, y
-    data = subset_data(data, 10)
+    data = subset_data(data, 1600)
 
     print "*** Step 2: ***"
     tsp = TSP(data)
