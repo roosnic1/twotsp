@@ -1,0 +1,66 @@
+*** Step 1: ***
+*** Step 2: ***
+triangulating ...
+build graph
+#edges: 49 #nodes: 20
+computing MST
+took 0.00100016593933
+computing delaunay of odd_deg_nodes
+#edges: 33 #nodes: 14 14
+computing minimum matching
+took 0.0160000324249
+#edges: 7 #nodes: 14
+find euler tour
+took 0.0
+euler path:  [(0, 7), (7, 16), (16, 4), (4, 9), (9, 6), (6, 3), (3, 18), (18, 11), (11, 19), (19, 1), (1, 5), (5, 13), (13, 5), (5, 14), (14, 17), (17, 14), (14, 18), (18, 12), (12, 10), (10, 8), (8, 2), (2, 15), (15, 0)]
+#edges: 23 #nodes: 20
+start shortcutting
+  --  start shortcutting visit  1
+5 visited! 13
+ looking backwards:  1 13  cutting  5
+14 visited! 17
+ looking backwards:  5 17  cutting  14
+18 visited! 14
+its a crossing
+connected_visited_neighbors: 3 11
+[]
+#edges: 20 #crossings: 0
+  --  start shortcutting visit  2
+[]
+#edges: 20 #crossings: 0
+  --  start shortcutting visit  3
+[]
+#edges: 20 #crossings: 0
+  --  start shortcutting visit  4
+[]
+#edges: 20 #crossings: 0
+  --  start shortcutting visit  5
+[]
+#edges: 20 #crossings: 0
+took 0.0
+#edges: 20 path len: 72940.5694094
+*** Step 3: ***
+Best Solution:
+Distance: 175850.340735
+('Tour:  ', [(13, 0), (0, 6), (6, 17), (17, 16), (16, 12), (12, 15), (15, 11), (11, 19), (19, 8), (8, 14), (14, 5), (5, 7), (7, 3), (3, 1), (1, 4), (4, 9), (9, 10), (10, 2), (2, 18), (18, 13)])
+('Route: ', [(0, 7), (7, 16), (16, 4), (4, 9), (9, 6), (6, 3), (3, 11), (11, 19), (19, 1), (1, 13), (13, 5), (5, 17), (17, 14), (14, 18), (18, 12), (12, 10), (10, 8), (8, 2), (2, 15), (15, 0)])
+*** Step 4: ***
+2 remaining unsolved duplicates
+manipulate route0 on 7
+[(0, 7), (7, 16), (16, 4), (4, 9), (9, 6), (6, 3), (3, 11), (11, 19), (19, 1), (1, 13), (13, 5), (5, 17), (17, 14), (14, 18), (18, 12), (12, 10), (10, 8), (8, 2), (2, 15), (15, 0)]
+manipulate route0 on 3
+[(0, 7), (7, 16), (16, 4), (4, 9), (9, 6), (6, 3), (3, 19), (19, 1), (1, 13), (13, 5), (5, 17), (17, 14), (14, 18), (18, 12), (12, 10), (10, 8), (8, 2), (2, 15), (15, 0), (0, 11)]
+-----------------------------------------------------
+0 remaining unsolved duplicates
+Path0: 92336.410661
+Path0: [(0, 7), (7, 16), (16, 9), (9, 6), (6, 3), (3, 19), (19, 1), (1, 13), (13, 5), (5, 17), (17, 14), (14, 18), (18, 12), (12, 10), (10, 8), (8, 2), (2, 15), (15, 0), (0, 11), (11, 4)]
+Path1: 175850.340735
+Path1: [(13, 0), (0, 6), (6, 17), (17, 16), (16, 12), (12, 15), (15, 11), (11, 19), (19, 8), (8, 14), (14, 5), (5, 7), (7, 3), (3, 1), (1, 4), (4, 9), (9, 10), (10, 2), (2, 18), (18, 13)]
+*** Step 5: ***
+Results:
+Path0: 92336.410661 / 72940.5694094
+Path1: 175850.340735 / 175850.340735
+shortes possible Path 117233.56049
+path0 1.89886940989*
+path1 3.61630726546*
+path0-path1 1.90445285317*

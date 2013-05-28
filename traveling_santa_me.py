@@ -85,10 +85,10 @@ class ME(object):
         self.nearespoints.update({route[inx][1]:True})
         if not newpt:
             return route
-        oldpt = route[inx][1]
 
-        route[inx] = (route[inx][0],route[inx][1])
-        route.insert(inx+1,(newpt,oldpt))
+        
+        route.insert(inx+1,(newpt,route[inx][1]))
+        route[inx] = (route[inx][0],newpt)
 
         manipulated1 = False
         for inx1, edge in enumerate(route):
@@ -109,9 +109,10 @@ class ME(object):
         self.nearespoints = dict()
         self.nearespointsOld = dict({'00':False})
         self.hashmapOld = dict({'old':(False,False)})
+        self.hashmapOldOld = dict({'old':(False,False)})
 
         
-        while(len(self.hashmap)> 10 and self.hashmapOld != self.hashmap):
+        while(len(self.hashmap)> 0 and self.hashmapOld != self.hashmap and self.hashmapOldOld != self.hashmapOld):
 
                    
             self.nearespoints = dict()
@@ -129,10 +130,12 @@ class ME(object):
 
             #raw_input("press enter")
             print "-----------------------------------------------------"
+            self.hashmapOldOld = self.hashmapOld
             self.hashmapOld = self.hashmap
             self.build_hasmap()
 
         print('{0} remaining unsolved duplicates'.format(len(self.hashmap)))
+        
         inxold = False
         while(len(self.hashmap)> 0):
             
@@ -162,6 +165,7 @@ class ME(object):
             self.build_hasmap()
             print "-----------------------------------------------------"
             print('{0} remaining unsolved duplicates'.format(len(self.hashmap)))
+
 
 
         

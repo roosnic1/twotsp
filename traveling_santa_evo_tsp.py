@@ -78,7 +78,7 @@ class TSP(object):
                     #find duplicated edges
                     for b in self.route:
                         if( (b[0] == c.element[0] and b[1] == c.element[1]) or (b[1] == c.element[0] and b[0] == c.element[1]) ):
-                            douplicates += 1
+                            #douplicates += 1
                             total += self.weights[c.element[0]][c.element[1]]#*douplicates
                             
                 last = (candidate[-1].element[1], candidate[0].element[0])
