@@ -40,21 +40,18 @@ def subset_data(data, size):
         samples.append(data[i])
     return np.array(samples)
 
-if __name__ == '__main__':
+
+def doSolve(filename):
     print "*** Step 1: *** \t\t\t ***"
 
-
-    anzpoints = 5000
-    readdump = False
-
-
-    if not readdump:
-        t1 = time.time()
-
+    if filename:
+        readdump = True
+    else:
+        readdump = False
     # read dump
     if readdump:
         print '--- Read stored dump --- \t\t\t ---'
-        dump = pickle.load(open(str("results/route"+str(anzpoints)+".dump"),'rb'))
+        dump = pickle.load(open(str(filename),'rb'))
         route0 = dump[0]
         route1 = dump[1]
         data = dump[2]
@@ -63,30 +60,13 @@ if __name__ == '__main__':
         exectime = dump[5]
 
     if not readdump:
+        t1 = time.time()
+    if not readdump:
         print "--- Reading Data --- \t\t\t ---"
         data = read_data_file('santa_cities.csv')  # id, x, y
         print "--- Sample Data --- \t\t\t ---"
         data = subset_data(data, anzpoints)
 
-    
-    
-    #Plot Points
-    print "--- Initialize Plot --- \t\t\t ---"
-    y = int(data[0][1])
-    z = int(data[0][2])
-    u = [int(data[0][1])]
-    v = [int(data[0][2])]
-    for x in range(1,len(data)):
-        u.append(int(data[x][1]))
-        v.append(int(data[x][2]))
-        if int(data[x][1]) > y:
-            y = int(data[x][1])
-
-        if int(data[x][2]) > z:
-            z = int(data[x][2])
-
-    plt.plot(u,v,'bo')
-    plt.axis([0,y,0,z])
 
     if not readdump:
         print "*** Step 2: *** \t\t\t ***"
@@ -123,10 +103,10 @@ if __name__ == '__main__':
         route1 = nico.solve()
 
         # Resolving duplicates
-        #me = ME(evo.weights,route0, route1)
-        #me.solve()
-        #route0 = me.route0
-        #route1 = me.route1
+        me = ME(evo.weights,route0, route1)
+        me.solve()
+        route0 = me.route0
+        route1 = me.route1
     
 
     print "*** Step 4: *** \t\t\t ***"
@@ -145,10 +125,12 @@ if __name__ == '__main__':
         dump = (route0,route1,data,route0_lenght,route1_lenght,exectime)
         pickle.dump(dump,open(str("results/route"+str(len(route0))+".dump"),'wb'))
     
+    mins = int( exectime/60 )
+    secs = int( exectime - (mins * 60) )
 
     print "--- Print Stats ------------------------------------------"
     print ""
-    print('{0} Points in {1}s'.format(len(route0), exectime))
+    print('{0} Points in {1}min {2}s'.format(len(route0), mins, secs ) )
     print('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
     print('Path \t Length \t longer then - \t factor ')
     print('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
@@ -158,14 +140,26 @@ if __name__ == '__main__':
     print('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
     print ""
 
-    #print('Path0: {0} / {1}'.format(evo.calc_path_lenght(me.route0), route0_lenght))
-    #print('Path1: {0} / {1}'.format(evo.calc_path_lenght(me.route1), route1_lenght))
-    #print('shortes possible Path {0}'.format(route1_lenght/1.5))
-    #print('path0 {0}*'.format(evo.calc_path_lenght(me.route0)/(route0_lenght/1.5)) )
-    #print('path1 {0}*'.format(evo.calc_path_lenght(me.route1)/(route0_lenght/1.5)) )
-    #print('path0-path1 {0}*'.format(evo.calc_path_lenght(me.route1)/evo.calc_path_lenght(me.route0)) )
-
     print "--- Print Gui --- \t\t\t ---"
+    #Plot Points
+    print "--- Initialize Plot --- \t\t\t ---"
+    y = int(data[0][1])
+    z = int(data[0][2])
+    u = [int(data[0][1])]
+    v = [int(data[0][2])]
+    for x in range(1,len(data)):
+        u.append(int(data[x][1]))
+        v.append(int(data[x][2]))
+        if int(data[x][1]) > y:
+            y = int(data[x][1])
+
+        if int(data[x][2]) > z:
+            z = int(data[x][2])
+
+    plt.plot(u,v,'.',color='gray')
+    plt.axis([0,y,0,z])
+
+
 
     q = []
     w = []
@@ -200,10 +194,16 @@ if __name__ == '__main__':
     #t = np.arange(0., 5., 0.2)
     #print t
     plt.plot(t[0],z[0],'rs')
-    plt.plot(t,z,'g--')
+    plt.plot(t,z,'--', color='#1ADD1A')
     plt.plot(a[0],s[0],'ys')
-    plt.plot(a,s,'m--')
+    plt.plot(a,s,'--', color='#DD2121')
     plt.show()
+
+if __name__ == '__main__':
+    doSolve("results/route80me.dump")
+
+   
+
 
 
 
