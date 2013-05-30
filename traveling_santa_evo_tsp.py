@@ -28,13 +28,13 @@ class TSP(object):
         fit = self.evaluator([candidate], kwargs)
         return fit[0]
 
-
+    # Generation eines einzelnen Kandidaten
     def generator(self, random, args):
         """Return a candidate solution for an evolutionary computation."""
         locations = [i for i in range(len(self.weights))]
         random.shuffle(locations)
         return locations
-    
+    # Generation eines einzelnen Kandidaten
     def constructor(self, random, args):
         self._use_ants = True
         """Return a candidate solution for an ant colony optimization."""

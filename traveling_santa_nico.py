@@ -9,6 +9,8 @@ class NICO(object):
 		inx = 0
 		pt0 = self.route0[inx][0]
 
+		# Einen alternativen Pfad zu route0 finden
+		# 
 		while inx < len(self.route0)-3 and inx != len(self.route0)-5:
 
 			inx += 3
@@ -26,11 +28,7 @@ class NICO(object):
 			else:
 				counter = 0
 
-			#print('-----------')
-			#print self.route1
 
-		#print inx
-		#print len(self.route0)
 		if inx == len(self.route0)-5:
 			inx += 4
 			pt1 = self.route0[inx][0]
@@ -66,6 +64,4 @@ class NICO(object):
 			pt1 = self.route0[inx][1]
 			self.route1.append( (pt0,pt1) )
 
-
-		#print self.route1
 		return self.route1

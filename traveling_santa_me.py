@@ -111,27 +111,24 @@ class ME(object):
         self.hashmapOld = dict({'old':(False,False)})
         self.hashmapOldOld = dict({'old':(False,False)})
 
-        
+        # Alle Duplikate finden und loesen
+        # self.hashmap beinhaltet referenzen zu allen Duplikate => Zugriff und Erkennund der Duplikate in O(n)
         while(len(self.hashmap)> 0 and self.hashmapOld != self.hashmap and self.hashmapOldOld != self.hashmapOld):
-
-                   
+            # self.nearestpoints beinhaltet eine Liste der geometrisch nahesten Punkte
             self.nearespoints = dict()
-
-            if self.calc_path_lenght(self.route0) < self.calc_path_lenght(self.route1):
-                
+            # Falls route0 kuerzer als route1 ist, werden alle Duplikate in route0 geloest
+            if self.calc_path_lenght(self.route0) < self.calc_path_lenght(self.route1):      
                 for mapentry in self.hashmap:    
                     print('solving {0}'.format(mapentry))
                     self.route0 = self.solve_duplicate(self.route0,self.hashmap.get(mapentry)[0])
-            else:
-                
+            else:           
                 for mapentry in self.hashmap:    
                     print('solving {0}'.format(mapentry))
                     self.route1 = self.solve_duplicate(self.route1,self.hashmap.get(mapentry)[1])
-
-            #raw_input("press enter")
-            print "-----------------------------------------------------"
+            # Erkennung von Endlos-Schleifen
             self.hashmapOldOld = self.hashmapOld
             self.hashmapOld = self.hashmap
+            # ev. neu entstandene Duplikate finden
             self.build_hasmap()
 
         print('{0} remaining unsolved duplicates'.format(len(self.hashmap)))
