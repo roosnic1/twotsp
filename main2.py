@@ -44,7 +44,7 @@ def subset_data(data, size):
 def doSolve(filename=False):
     print "*** Step 1: *** \t\t\t ***"
 
-    anzpoints = 400
+    anzpoints = 6
 
     if filename:
         readdump = True
@@ -65,7 +65,7 @@ def doSolve(filename=False):
         t1 = time.time()
     if not readdump:
         print "--- Reading Data --- \t\t\t ---"
-        data = read_data_file('santa_cities.csv')  # id, x, y
+        data = read_data_file('santa_text.csv')  # id, x, y
         print "--- Sample Data --- \t\t\t ---"
         data = subset_data(data, anzpoints)
 
@@ -125,7 +125,7 @@ def doSolve(filename=False):
 
         print "--- Saving dump --- \t\t\t ---"
         dump = (route0,route1,data,route0_lenght,route1_lenght,exectime)
-        pickle.dump(dump,open(str("results/route"+str(len(route0))+".dump"),'wb'))
+        #pickle.dump(dump,open(str("results/route"+str(len(route0))+".dump"),'wb'))
     
     mins = int( exectime/60 )
     secs = int( exectime - (mins * 60) )
@@ -198,7 +198,7 @@ def doSolve(filename=False):
     plt.plot(t[0],z[0],'rs')
     plt.plot(t,z,'--', color='#1ADD1A')
     plt.plot(a[0],s[0],'ys')
-    plt.plot(a,s,'--', color='#DD2121')
+    plt.plot(a,s,'-', color='#DD2121')
     plt.show()
 
 if __name__ == '__main__':
