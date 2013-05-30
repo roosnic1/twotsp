@@ -8,40 +8,10 @@ Find the almost two best paths that never use the same edge through a number of 
 Jérémie Blaser, Martin Eigenmann and Nicolas Roos
 
 ##Install
+You must have python and pip on your operating system to intall all the required libaries. Install them with the following command.
 ```python
 pip install -r requirements.txt
 ```
-###Install wxPython2.9 on a Mac
-Download wxPython2.9 for Python2.7 64Bit from http://downloads.sourceforge.net/wxpython/wxPython2.9-osx-2.9.4.0-cocoa-py2.7.dmg
-
-Open the dmg and install the package. Find the wxredirect.pth e.g(/Library/Python/2.7/site-packages/wxredirect.pth). 
-Change to your virtualenv site-packages directory
-```python
-cd /Users/koki/.virtualenvs/twotsp/lib/python2.7/site-packages/
-```
-Create a link to the wxredirect.pth.
-```python
-ln -s /Library/Python/2.7/site-packages/wxredirect.pth wxredirect.pth
-```
-
-Change to your virtualenv bin directory
-```python
-cd /Users/koki/.virtualenvs/twotsp/bin/
-```
-create a file called fwpy with the following content:
-```python
-#What real Python executable to use
-PYVER=2.7
-PYTHON=/System/Library/Frameworks/Python.framework/Versions/$PYVER/bin/python$PYVER
-
-# find the root of the virtualenv, it should be the parent of the dir this script is in
-ENV=`$PYTHON -c "import os; print os.path.abspath(os.path.join(os.path.dirname(\"$0\"), '..'))"`
-
-# now run Python with the virtualenv set as Python's HOME
-export PYTHONHOME=$ENV
-exec $PYTHON "$@"
-```
-
 
 ##Execute
 Normal Execution:
@@ -49,7 +19,8 @@ Normal Execution:
 python main.py
 ```
 
-Gui Execution:
+Execution with test cases:
 ```python
-fwpy gui.py
+python exec.py
 ```
+Sometimes this script hangs with the ME Algorithmen. Press Ctrl + C and retry.
