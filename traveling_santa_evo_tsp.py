@@ -1,3 +1,22 @@
+##########################################################################################
+##########################################################################################
+##                                                                                      ## 
+## Dieser Code ist im Rahmen der Projektarbeit des Moduls Softwareprojekt 2             ##
+## im Zeitraum vom 20.02.2013 bis 30.05.2013 entstanden.                                ##
+##                                                                                      ##
+## Authoren: Jeremie Blaser, Nicolas Roos, Martin Eigenmann                             ##
+## Version: 1.0                                                                         ##
+##                                                                                      ##
+## - Alle Rechte Vorbehalten -                                                          ##
+##                                                                                      ##
+## ------------------------------------------------------------------------------------ ##
+## Diese Datei beinhaltet das TSP Objekt zur Findung eines ACO oder EVO Pfad.           ##
+## Wird verwendet in traveling_santa_evo_acs.py und traveling_santa_evo.py              ##
+##                                                                                      ##
+##                                                                                      ##
+##                                                                                      ##
+##########################################################################################
+##########################################################################################
 import copy
 from inspyred import ec
 from inspyred.ec import emo

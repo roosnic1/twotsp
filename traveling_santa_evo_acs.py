@@ -1,3 +1,22 @@
+##########################################################################################
+##########################################################################################
+##                                                                                      ## 
+## Dieser Code ist im Rahmen der Projektarbeit des Moduls Softwareprojekt 2             ##
+## im Zeitraum vom 20.02.2013 bis 30.05.2013 entstanden.                                ##
+##                                                                                      ##
+## Authoren: Jeremie Blaser, Nicolas Roos, Martin Eigenmann                             ##
+## Version: 1.0                                                                         ##
+##                                                                                      ##
+## - Alle Rechte Vorbehalten -                                                          ##
+##                                                                                      ##
+## ------------------------------------------------------------------------------------ ##
+## Diese Datei beinhaltet das EVO Objekt zur Findung eines ACO Pfad.                    ##
+##                                                                                      ##
+##                                                                                      ##
+##                                                                                      ##
+##                                                                                      ##
+##########################################################################################
+##########################################################################################
 from random import Random
 from time import time
 from math import cos

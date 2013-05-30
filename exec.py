@@ -1,3 +1,24 @@
+##########################################################################################
+##########################################################################################
+##                                                                                      ## 
+## Dieser Code ist im Rahmen der Projektarbeit des Moduls Softwareprojekt 2             ##
+## im Zeitraum vom 20.02.2013 bis 30.05.2013 entstanden.                                ##
+##                                                                                      ##
+## Authoren: Jeremie Blaser, Nicolas Roos, Martin Eigenmann                             ##
+## Version: 1.0                                                                         ##
+##                                                                                      ##
+## - Alle Rechte Vorbehalten -                                                          ##
+##                                                                                      ##
+## ------------------------------------------------------------------------------------ ##
+## Diese Datei gibt bei der Ausfuehrung alle Relevanten Daten aus.                      ##
+## Alle Daten werden neu berechnet.                                                     ##
+##                                                                                      ##
+##                                                                                      ##
+## Aufruf: python exec.py                                                               ##
+##                                                                                      ##
+##########################################################################################
+##########################################################################################
+
 import csv
 import numpy as np
 import cProfile as profile

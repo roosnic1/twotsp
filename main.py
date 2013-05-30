@@ -1,3 +1,39 @@
+##########################################################################################
+##########################################################################################
+##                                                                                      ## 
+## Dieser Code ist im Rahmen der Projektarbeit des Moduls Softwareprojekt 2             ##
+## im Zeitraum vom 20.02.2013 bis 30.05.2013 entstanden.                                ##
+##                                                                                      ##
+## Authoren: Jeremie Blaser, Nicolas Roos, Martin Eigenmann                             ##
+## Version: 1.0                                                                         ##
+##                                                                                      ##
+## - Alle Rechte Vorbehalten -                                                          ##
+##                                                                                      ##
+## ------------------------------------------------------------------------------------ ##
+## Diese Datei ist der Haupt-Einstiegspunkt                                             ##
+##                                                                                      ##
+##                                                                                      ##
+## Dateiverzeichnis:                                                                    ##
+## main.py                                                                              ##
+## resulty.py                                                                           ##
+## traveling_santa_py                                                                   ##
+## traveling_santa_evo.py                                                               ##
+## traveling_santa_evo_acs.py                                                           ##
+## traveling_santa_evo_tsp.py                                                           ##
+## traveling_santa_me.py                                                                ##
+## travelint_santa_nico.py                                                              ##
+## data                                                                                 ##
+## + santa_cities.csv                                                                   ##
+## results                                                                              ##
+## + route[i][evo|me|aco|].dump                                                         ##
+##                                                                                      ##
+## Aufruf: python main.py                                                               ##
+##                                                                                      ##
+##########################################################################################
+##########################################################################################
+
+
+
 import csv
 import numpy as np
 import cProfile as profile

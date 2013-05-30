@@ -1,3 +1,23 @@
+##########################################################################################
+##########################################################################################
+##                                                                                      ## 
+## Dieser Code ist im Rahmen der Projektarbeit des Moduls Softwareprojekt 2             ##
+## im Zeitraum vom 20.02.2013 bis 30.05.2013 entstanden.                                ##
+##                                                                                      ##
+## Authoren: Jeremie Blaser, Nicolas Roos, Martin Eigenmann                             ##
+## Version: 1.0                                                                         ##
+##                                                                                      ##
+## - Alle Rechte Vorbehalten -                                                          ##
+##                                                                                      ##
+## ------------------------------------------------------------------------------------ ##
+## Diese Datei gibt bei der Ausfuehrung alle Relevanten Daten aus den Dumps aus.        ##
+## Diese Datei dient zur Vereinfachung der Handhabung waehrend der Dokumentationsphase. ##
+##                                                                                      ##
+## Aufruf: python results.py                                                            ##
+##                                                                                      ##
+##########################################################################################
+##########################################################################################
+
 import csv
 import numpy as np
 import cProfile as profile
